@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  /* margin: auto; */
+}
+
+body {
+
+}
+
+header {
+  height: 20vh;
+}
+
+main {
+  display: flex;
+}
