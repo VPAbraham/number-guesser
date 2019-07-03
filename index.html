@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>title</title>
   <meta name="author" content="name">
   <meta name="description" content="description here">
@@ -12,18 +12,70 @@
   </head>
   <body>
     <header>
+      <h1>NUMBER<span>GUESSER</span></h1>
+      <h2>ULTIMATE CHALLENGER EDITION</h2>
     </header>
     <main>
-      <section>
-        <article>
-          <
+      <secteion class="left-pane">
+        <article class="range">
+          <h3 class="range__header">Set Range</h3>
+          <form>
+            <label class="range__label" for="user-min">Min Range</label>
+            <input type="number" class="range__input" id="user-min">
+            <label class="range__label" for="user-max">Max Range</label>
+            <input type="number" class="range__input" id="user-max">
+            <button class="range__button" id="update-btn">UPDATE</button>
+          </form>
         </article>
-        <article>
+        <article class="player">
+          <p class="player__header">The Current Range is <span id="min-display">1</span> to <span id="max-display">100</span></p>
+          <form class="player__form">
+            <h3 class="player__name player-one">Challenger 1</h3>
+            <label class="player__label" for="player-one-name">Name</label>
+            <input type="text" class="player__input" id="player-one-name">
+            <label class="player__input">Guess</label>
+            <input type="number" class="player__input  guess-input" name="guess" >
+            <h3 class="player__name player-two">Challenger 2</h3>
+            <label class="player__label" for="player-two-name">Name</label>
+            <input type="text" class="player__input" id="player-two-name">
+            <label class="player__input">Guess</label>
+            <input type="number" class="player__input  guess-input" name="guess" >
+            <button class="player__button" id="submit-btn">SUBMIT</S></button>
+            <button class="player__button" id="reset-btn">RESET BUTTON</button>
+            <button class="player__button" id="clear-btn">CLEAR BUTTON</button>
+          </form>
         </article>
-        <article>
+        <article class="scoreboard">
+          <h3 class="scoreboard__header">Latest Score</h3>
+          <div class="scoreboard__left">
+            <h4 class="scoreboard__player player-one">Challenger 1 Name</h4>
+            <p class="scoreboard__label">current guess</p>
+            <p class="scoreboard__guess" id="player1-guess">97</p>
+            <p class="scoreboard__prompt" id="high-tip">that's too high</p>
+          </div>
+          <div class="scoreboard__right">
+            <h4 class="scoreboard__player player-two">Challenger 2 Name</h4>
+            <p class="scoreboard__label">current guess</p>
+            <p class="scoreboard__guess" id="player2-guess">97</p>
+            <p class="scoreboard__prompt" id="low-tip">that's too low</p>
+          </div>
+        </article>
+        <article class="winner">
+          <header class="winner__header">
+            <h4 class="header__name">CHALLENGER 1 NAME</h4>
+            <p>VS</p>
+            <h4>CHALLENGER 2 NAME</h4>
+            <h2 class="winner__name">CHALLENGER 1 NAME</h2>
+            <h3>WINNER</h3>
+            <footer>
+              <p><span>2</span>GUESSES</p>
+              <p><span>23</span>MINUTES</p>
+              <button>X</button>
+            </footer>
+          </header>
         </article>
       </section>  
-      <section>
+      <section class="right-pane">
         <article>
         </article>  
       </section>
