@@ -7,12 +7,12 @@
   <meta name="author" content="name">
   <meta name="description" content="description here">
   <meta name="keywords" content="keywords,here">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css">
+  <link rel="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" type="text/css">
   </head>
   <body>
-    <header>
-      <h1>NUMBER<span>GUESSER</span></h1>
+    <header class="header">
+      <h1>NUMBER<span class="guesser">GUESSER</span></h1>
       <h2>ULTIMATE CHALLENGER EDITION</h2>
     </header>
     <main>
@@ -24,7 +24,7 @@
             <input type="number" class="range__input" id="user-min">
             <label class="range__label" for="user-max">Max Range</label>
             <input type="number" class="range__input" id="user-max">
-            <button class="range__button" id="update-btn">UPDATE</button>
+            <button class="range__button" id="update-btn" type="button">UPDATE</button>
           </form>
         </article>
         <article class="player">
@@ -34,15 +34,16 @@
             <label class="player__label" for="player-one-name">Name</label>
             <input type="text" class="player__input" id="player-one-name">
             <label class="player__input">Guess</label>
-            <input type="number" class="player__input  guess-input" name="guess" >
+            <input type="number" class="player__input  guess-input" id="player-one-guess" name="guess" >
             <h3 class="player__name player-two">Challenger 2</h3>
-            <label class="player__label" for="player-two-name">Name</label>
-            <input type="text" class="player__input" id="player-two-name">
+            <label class="player__label" for="pclayer-two-name">Name</label>
+            <input type="text" class=
+            "player__input" id="player-two-name">
             <label class="player__input">Guess</label>
-            <input type="number" class="player__input  guess-input" name="guess" >
-            <button class="player__button" id="submit-btn">SUBMIT</S></button>
+            <input type="number" class="player__input  guess-input" id="player-two-guess" name="guess" >
+            <button class="player__button" id="submit-btn">SUBMIT GUESS</S></button>
             <button class="player__button" id="reset-btn">RESET BUTTON</button>
-            <button class="player__button" id="clear-btn">CLEAR BUTTON</button>
+            <button class="player__button" id="clear-btn" type="button" disabled>CLEAR BUTTON</button>
           </form>
         </article>
         <article class="scoreboard">
@@ -60,23 +61,25 @@
             <p class="scoreboard__prompt" id="low-tip">that's too low</p>
           </div>
         </article>
-      </section>
+      </section>  
       <section class="right-pane">
         <article class="winner">
           <header class="winner__header">
-            <h4 class="header__name">CHALLENGER 1 NAME</h4>
+            <h4>CHALLENGER 1 NAME</h4>
             <p>VS</p>
             <h4>CHALLENGER 2 NAME</h4>
             <h2 class="winner__name">CHALLENGER 1 NAME</h2>
-            <h3>WINNER</h3>
-            <footer>
-              <p><span>2</span>GUESSES</p>
-              <p><span>23</span>MINUTES</p>
-              <button>X</button>
-            </footer>
           </header>
+          <h3 class="winner__status">WINNER</h3>
+          <footer>
+            <p class="winner__p"><span class="winner__span">2</span> GUESSES</p>
+            <p class="winner__p"><span class="winner__span">23</span> MINUTES</p>
+            <button>X</button>
+          </footer>
+          </header> 
         </article>
-      </section>  
+      </section>
     </main>
   </body>
+  <script type="text/javascript" src="main.js"></script>
 </html>
