@@ -1,0 +1,241 @@
+* {
+  /*border: 1px solid red;*/
+  /*margin: auto;*/
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+/*Header Section*/
+
+.header {
+align-items: center;
+background-color: #404041;
+display: flex;
+flex-direction: column;
+height: 15%;
+width: 100%;
+}
+.guesser{
+  font-weight: 200;
+}
+
+h1 {
+color: #DD1972;
+}
+
+h2 {
+color: white;
+}
+
+/*Main Section (everything below header)*/
+
+main {
+display: flex;
+height: 100%;
+}
+
+/*Left Pane*/
+
+.left-pane {
+background-color: #F7F7F7;
+display: flex;
+flex-direction: column;
+width: 50%
+}
+
+/*Range Card <---- Left Pane*/
+
+.range {
+  background-color: white;
+  border: solid 1px #6E6E6E;
+  width: 90%;
+}
+
+.range__header {
+  color: #404041;
+}
+
+.range__label {
+  color: #6E6E6E;
+}
+
+.range__input {
+
+}
+
+.range__button {
+  border-radius: 10px;
+  background-color: #6E6E6E;
+  color: #FFFFFF;
+  font-weight: 700;
+  width: 77px;
+  height: 24px;
+}
+
+/*Player Card <---- Left Pane*/
+
+.player {
+  background-color: white;
+  border: solid 1px #6E6E6E;
+  width: 90%;
+}
+
+.player__header {
+  color: #6E6E6E;
+}
+
+#min-display {
+  color: #404041;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#max-display {
+  color: #404041;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.player__form {
+
+}
+
+.player__name{
+  color: #404041;
+}
+
+.player__label {
+  color: #6E6E6E;
+  font-weight: 200;
+}
+
+.player__input {
+  color: #6E6E6E;
+  font-weight: 200;
+}
+
+.player__button {
+  background-color: #6E6E6E;
+  border-radius: 30px;
+  color: #FFFFFF;
+  font-weight: 700;
+  height: 24px;
+  padding: 5px;
+}
+
+#submit-btn {
+  width: 116px;
+}
+
+#reset-btn {
+
+}
+
+#clear-btn {
+
+}
+
+/*Scoreboard Card <---- Left Pane*/
+
+.scoreboard {
+  background-color: white;
+  border: solid 1px #6E6E6E;
+  width: 90%;
+} 
+
+.scoreboard__header {
+
+}
+
+.scoreboard__left {
+
+}
+
+.scoreboard__player{
+  color: #6E6E6E;
+}
+
+.scoreboard__label {
+  color: #6E6E6E;
+  font-weight: 200;
+}
+
+.scoreboard__guess {
+  color: #F74D9B;
+
+}
+
+.scoreboard_prompt {
+  color: #6E6E6E;
+}
+
+#high-tip {
+  color: #6E6E6E;
+  font-weight: 200;
+}
+
+#low-tip {
+  color: #6E6E6E;
+  font-weight: 200;
+}
+
+
+
+
+
+
+/*Right Pane*/
+
+.right-pane {
+  background-color: #404041;
+  display: flex;
+  flex-direction: columns;
+  width: 50%;
+}
+
+/*Winner Card ----> Right Pane*/
+
+.winner {
+  background-color: white;
+  border: solid 1px #6E6E6E;
+  height: 20%;
+  width: 90%;
+}
+
+.winner__header {
+  color: #404041;
+}
+
+.header__name {
+
+}
+
+.winner__name {
+
+}
+
+.winner__status {
+  color: #6E6E6E;
+  font-size: 33px;
+  font-weight: 200;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.winner__p {
+  color: #6E6E6E;
+}
+
+.winner__span {
+  color: #404041;
+  font-size: 18px;
+}
