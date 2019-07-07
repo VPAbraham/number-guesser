@@ -20,10 +20,14 @@
         <article class="range">
           <h3 class="range__header">Set Range</h3>
           <form>
-            <label class="range__label" for="user-min">Min Range</label>
-            <input type="number" class="range__input" id="user-min">
-            <label class="range__label" for="user-max">Max Range</label>
-            <input type="number" class="range__input" id="user-max">
+            <div class="label-input">
+              <label class="range__label" for="user-min">Min Range</label>
+              <input type="number" class="range__input" id="user-min">
+            </div>
+            <div class="label-input">
+              <label class="range__label" for="user-max">Max Range</label>
+              <input type="number" class="range__input" id="user-max">
+            </div>
             <button class="range__button" id="update-btn" type="button">UPDATE</button>
           </form>
         </article>
@@ -31,35 +35,46 @@
           <p class="player__header">The Current Range is <span id="min-display">1</span> to <span id="max-display">100</span></p>
           <form class="player__form">
             <h3 class="player__name player-one">Challenger 1</h3>
-            <label class="player__label" for="player-one-name">Name</label>
-            <input type="text" class="player__input" id="player-one-name">
-            <label class="player__input">Guess</label>
-            <input type="number" class="player__input  guess-input" id="player-one-guess" name="guess" >
+            <div class="label-input">
+              <label class="player__label" for="player-one-name">Name</label>
+              <input type="text" class="player__input" id="player-one-name">
+            <div class="label-input"> 
+              <label class="player__label">Guess</label>
+              <input type="number" class="player__input  guess-input" id="player-one-guess" name="guess" >
+            </div>
             <h3 class="player__name player-two">Challenger 2</h3>
-            <label class="player__label" for="pclayer-two-name">Name</label>
-            <input type="text" class=
+            <div class="label-input">
+              <label class="player__label" for="pclayer-two-name">Name</label>
+              <input type="text" class=
             "player__input" id="player-two-name">
-            <label class="player__input">Guess</label>
-            <input type="number" class="player__input  guess-input" id="player-two-guess" name="guess" >
-            <button class="player__button" id="submit-btn">SUBMIT GUESS</S></button>
-            <button class="player__button" id="reset-btn">RESET BUTTON</button>
-            <button class="player__button" id="clear-btn" type="button" disabled>CLEAR BUTTON</button>
+            </div>
+            <div class="label-input">
+              <label class="player__label">Guess</label>
+              <input type="number" class="player__input  guess-input" id="player-two-guess" name="guess" >
+            </div>
+            <div class="button-div"></div>
+              <button class="player__button" id="submit-btn">SUBMIT GUESS</S></button>
+              <button class="player__button" id="reset-btn">RESET BUTTON</button>
+              <button class="player__button" id="clear-btn" type="button" disabled>CLEAR BUTTON</button>
+            </div>
           </form>
         </article>
         <article class="scoreboard">
-          <h3 class="scoreboard__header">Latest Score</h3>
-          <div class="scoreboard__left">
-            <h4 class="scoreboard__player player-one">Challenger 1 Name</h4>
-            <p class="scoreboard__label">current guess</p>
-            <p class="scoreboard__guess" id="player1-guess">97</p>
-            <p class="scoreboard__prompt" id="high-tip">that's too high</p>
-          </div>
-          <div class="scoreboard__right">
-            <h4 class="scoreboard__player player-two">Challenger 2 Name</h4>
-            <p class="scoreboard__label">current guess</p>
-            <p class="scoreboard__guess" id="player2-guess">97</p>
-            <p class="scoreboard__prompt" id="low-tip">that's too low</p>
-          </div>
+            <h3 class="scoreboard__header">Latest Score</h3>
+            <section class="score-box">
+              <div class="scoreboard__left">
+                <h4 class="scoreboard__player player-one">Challenger 1 Name</h4>
+                <p class="scoreboard__label">current guess</p>
+                <p class="scoreboard__guess" id="player1-guess">97</p>
+                <p class="scoreboard__prompt" id="high-tip">that's too high</p>
+              </div>
+              <div class="scoreboard__right">
+                <h4 class="scoreboard__player player-two">Challenger 2 Name</h4>
+                <p class="scoreboard__label">current guess</p>
+                <p class="scoreboard__guess" id="player2-guess">97</p>
+                <p class="scoreboard__prompt" id="low-tip">that's too low</p>
+              </div>
+            </section>
         </article>
       </section>  
       <section class="right-pane">
