@@ -2,6 +2,7 @@ var userMin = document.querySelector("#user-min");
 var userMax = document.querySelector("#user-max");
 var minDisplay = document.querySelector("#min-display");
 var maxDisplay = document.querySelector("#max-display");
+var conflictError = document.querySelector("#conflict-error");
 var updateBtn = document.querySelector("#update-btn");
 var submitBtn = document.querySelector("#submit-btn")
 var resetBtn = document.querySelector("#reset-btn");
@@ -27,8 +28,16 @@ updateBtn.addEventListener("click", updateRange);
 clearBtn.addEventListener('click', clearFields);
 submitBtn.addEventListener('click', submitFunc)
 leftSide.addEventListener("keyup", disableBtns);
+conflictError.addEventListener('click', guessesError);
 
 // Functions
+function guessesError() {
+  if (userMin.value > userMax.value) {
+    conflictError.style.visibility = 'visible';
+  } else {
+    conflictError.style.visibility = 'hidden';
+  }
+}
 
 function disableBtns() {
   disableClear();
@@ -39,12 +48,21 @@ function submitFunc(e) {
   e.preventDefault();
   displayGuess();
   displayName();
-  displayFeedback(playerOneGuess.value, leftSuggestion);
-  displayFeedback(playerTwoGuess.value, rightSuggestion);
-  appendArticle();
+  guessesError();
 }
 
 function updateRange() {
+  
+  minDisplay.innerHTML = userMin.value;
+  maxDisplay.innerHTML = userMax.value;
+  useRange(userMin.value, userMax.value);
+  userMin.value = "";
+  userMax.value = "";
+  
+}
+
+function updateRange() {
+  guessesError();
   if (userMin.value === '' || maxDisplay.value === '') {
     minDisplay.innerText = 1;
     maxDisplay.innerText = 100;
@@ -54,6 +72,9 @@ function updateRange() {
     useRange(userMin.value, userMax.value);
     userMin.value = "";
     userMax.value = "";
+    displayFeedback(playerOneGuess.value, leftSuggestion);
+    displayFeedback(playerTwoGuess.value, rightSuggestion);
+    appendArticle();
   }
 }
 
