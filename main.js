@@ -18,6 +18,7 @@ var leftTip = document.querySelector('#left-tip');
 var rightTip = document.querySelector('#right-tip');
 
 var leftSide = document.querySelector(".left-pane");
+var rightSide = document.querySelector('.right-pane')
 
 // Event Listeners
 
@@ -38,11 +39,11 @@ function submitFunc(e) {
   e.preventDefault();
   displayGuess();
   displayName();
-  displayLeftFeedback();
-  displayRightFeedback();
+  displayFeedback();
 }
 
 function updateRange() {
+  if(minDisplay.valur)
   minDisplay.innerHTML = userMin.value;
   maxDisplay.innerHTML = userMax.value;
   useRange(userMin.value, userMax.value);
@@ -102,23 +103,38 @@ function useRange(min, max) {
   console.log(genNumber)
 }
 
-function displayLeftFeedback() {   
+function displayFeedback() {
+  console.log(playerOneGuess.value)   
   if (playerOneGuess.value > genNumber) {
     leftTip.innerText = 'That\'s too high';
   } else if (playerOneGuess.value < genNumber) {
     leftTip.innerText = 'That\'s too low';
-  } else if (playerOneGuess.value === genNumber) {
+  } else 
     leftTip.innerText = 'BOOM!'
-  }
-}
-
-function displayRightFeedback() {
+  
   if (playerTwoGuess.value > genNumber) {
     rightTip.innerText = "That's too high";
   } else if (playerTwoGuess.value < genNumber) {
     rightTip.innerText = "That's too low";
-  } else if (playerTwoGuess.value === genNumber) {
+  } else 
     rightTip.innerText = "BOOM!";
+
+  if (rightTip.innerText || leftTip.innerText === 'BOOM!') {
+    rightSide.insertAdjacentHTML('afterbegin', `<article class="winner">
+          <header class="winner__header">
+            <h4>CHALLENGER 1 NAME</h4>
+            <p>VS</p>
+            <h4>CHALLENGER 2 NAME</h4>
+          </header>
+          <h2 class="winner__name">CHALLENGER 1 NAME</h2>
+          <h3 class="winner__status">WINNER</h3>
+          <footer>
+            <p class="winner__p"><span class="winner__span">2</span> GUESSES</p>
+            <p class="winner__p"><span class="winner__span">23</span> MINUTES</p>
+            <button>X</button>
+          </footer>
+          </header>`)
   }
 }
+
 
