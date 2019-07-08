@@ -41,6 +41,7 @@ function submitFunc(e) {
 function updateRange() {
   minDisplay.innerHTML = userMin.value;
   maxDisplay.innerHTML = userMax.value;
+  useRange(userMin.value, userMax.value);
   userMin.value = "";
   userMax.value = "";
 }
@@ -61,6 +62,8 @@ function disableClear() {
 function clearFields() {
   playerOneGuess.value = '';
   playerTwoGuess.value = '';
+  guessOne.innerText = 97;
+  guessTwo.innerText = 3;
   disableClear();
 }
 
@@ -79,4 +82,17 @@ function displayGuess() {
 function displayName() {
   challengerOne.innerText = playerOneName.value;
   challengerTwo.innerText = playerTwoName.value;
+}
+
+function genNum() {
+  return Math.floor(Math.random() * (100 - 1)) + 1;
+}
+
+console.log(genNum())
+
+function useRange(min, max) {
+  var min = parseInt(min);
+  var max = parseInt(max);
+  genNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log(genNumber)
 }
