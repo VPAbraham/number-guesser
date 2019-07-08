@@ -14,6 +14,8 @@ var guessOne = document.querySelector('#player1-guess');
 var guessTwo = document.querySelector('#player2-guess');
 var challengerOne = document.querySelector('#player-one');
 var challengerTwo = document.querySelector('#player-two');
+var leftTip = document.querySelector('#left-tip');
+var rightTip = document.querySelector('#right-tip');
 
 var leftSide = document.querySelector(".left-pane");
 
@@ -36,6 +38,8 @@ function submitFunc(e) {
   e.preventDefault();
   displayGuess();
   displayName();
+  displayLeftFeedback();
+  displayRightFeedback();
 }
 
 function updateRange() {
@@ -52,11 +56,18 @@ function clearGuess() {
 }
 
 function disableClear() {
-  if (playerOneGuess.value === '' && playerTwoGuess.value === '') {
+  if (playerOneGuess.value && playerTwoGuess.value === '') {
     clearBtn.disabled = true;
   } else {
     clearBtn.disabled = false;
   }
+}
+
+function disableReset() {
+  if (playerOneName.value && playerTwoName.value === '') {
+    resetBtn.disabled = true;
+  } else 
+  resetBtn.disabled = false;
 }
 
 function clearFields() {
@@ -67,12 +78,6 @@ function clearFields() {
   disableClear();
 }
 
-function disableReset() {
-  if (playerOneName.value === '' && playerTwoName.value === '') {
-    resetBtn.disabled = true;
-  } else 
-  resetBtn.disabled = false;
-}
 
 function displayGuess() {
   guessOne.innerText = playerOneGuess.value;
@@ -96,3 +101,24 @@ function useRange(min, max) {
   genNumber = Math.floor(Math.random() * (max - min + 1)) + min;
   console.log(genNumber)
 }
+
+function displayLeftFeedback() {   
+  if (playerOneGuess.value > genNumber) {
+    leftTip.innerText = 'That\'s too high';
+  } else if (playerOneGuess.value < genNumber) {
+    leftTip.innerText = 'That\'s too low';
+  } else if (playerOneGuess.value === genNumber) {
+    leftTip.innerText = 'BOOM!'
+  }
+}
+
+function displayRightFeedback() {
+  if (playerTwoGuess.value > genNumber) {
+    rightTip.innerText = "That's too high";
+  } else if (playerTwoGuess.value < genNumber) {
+    rightTip.innerText = "That's too low";
+  } else if (playerTwoGuess.value === genNumber) {
+    rightTip.innerText = "BOOM!";
+  }
+}
+
