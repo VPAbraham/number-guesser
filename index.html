@@ -45,7 +45,7 @@
             </div>
             <h3 class="player__name player-two">Challenger 2</h3>
             <div class="label-input">
-              <label class="player__label" for="pclayer-two-name">Name</label>
+              <label class="player__label" for="player-two-name">Name</label>
               <input type="text" class=
             "player__input" id="player-two-name">
             </div>
@@ -54,8 +54,8 @@
               <input type="number" class="player__input  guess-input" id="player-two-guess" name="guess" >
             </div>
             <div class="button-div"></div>
-              <button class="player__button" id="submit-btn">SUBMIT GUESS</S></button>
-              <button class="player__button" id="reset-btn">RESET BUTTON</button>
+              <button class="player__button" id="submit-btn" >SUBMIT GUESS</S></button>
+              <button class="player__button" id="reset-btn" disabled>RESET BUTTON</button>
               <button class="player__button" id="clear-btn" type="button" disabled>CLEAR BUTTON</button>
             </div>
           </form>
@@ -64,13 +64,13 @@
             <h3 class="scoreboard__header">Latest Score</h3>
             <section class="score-box">
               <div class="scoreboard__left">
-                <h4 class="scoreboard__player player-one">Challenger 1 Name</h4>
+                <h4 class="scoreboard__player" id="player-one">Challenger 1 Name</h4>
                 <p class="scoreboard__label">current guess</p>
                 <p class="scoreboard__guess" id="player1-guess">97</p>
                 <p class="scoreboard__prompt" id="high-tip">that's too high</p>
               </div>
               <div class="scoreboard__right">
-                <h4 class="scoreboard__player player-two">Challenger 2 Name</h4>
+                <h4 class="scoreboard__player" id="player-two">Challenger 2 Name</h4>
                 <p class="scoreboard__label">current guess</p>
                 <p class="scoreboard__guess" id="player2-guess">97</p>
                 <p class="scoreboard__prompt" id="low-tip">that's too low</p>

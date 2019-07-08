@@ -149,12 +149,16 @@ width: 50%
 button {
   border-radius: 10px;
   background-color: #6E6E6E;
-  color: rgb(145, 135, 135);
+  color: #FFFFFF;
   font-weight: 700;
   height: 24px;
   /* display: inline-block; */
   width: 30%;
-  /* margin: 3%; */
+  margin: 3% 0 1% 2%;
+}
+
+button:disabled {
+  background-color: #D1D2D4;
 }
 
 /*Scoreboard Card <---- Left Pane*/
