@@ -14,10 +14,11 @@ var guessOne = document.querySelector('#player1-guess');
 var guessTwo = document.querySelector('#player2-guess');
 var challengerOne = document.querySelector('#player-one');
 var challengerTwo = document.querySelector('#player-two');
-var leftTip = document.querySelector('#left-tip');
-var rightTip = document.querySelector('#right-tip');
+var leftSuggestion = document.querySelector('#left-tip');
+var rightSuggestion = document.querySelector('#right-tip');
 
 var leftSide = document.querySelector(".left-pane");
+var rightSide = document.querySelector('.right-pane')
 
 // Event Listeners
 
@@ -38,16 +39,22 @@ function submitFunc(e) {
   e.preventDefault();
   displayGuess();
   displayName();
-  displayLeftFeedback();
-  displayRightFeedback();
+  displayFeedback(playerOneGuess.value, leftSuggestion);
+  displayFeedback(playerTwoGuess.value, rightSuggestion);
+  appendArticle();
 }
 
 function updateRange() {
-  minDisplay.innerHTML = userMin.value;
-  maxDisplay.innerHTML = userMax.value;
-  useRange(userMin.value, userMax.value);
-  userMin.value = "";
-  userMax.value = "";
+  if (userMin.value === '' || maxDisplay.value === '') {
+    minDisplay.innerText = 1;
+    maxDisplay.innerText = 100;
+  } else {  
+    minDisplay.innerHTML = userMin.value;
+    maxDisplay.innerHTML = userMax.value;
+    useRange(userMin.value, userMax.value);
+    userMin.value = "";
+    userMax.value = "";
+  }
 }
 
 function clearGuess() {
@@ -56,10 +63,10 @@ function clearGuess() {
 }
 
 function disableClear() {
-  if (playerOneGuess.value && playerTwoGuess.value === '') {
-    clearBtn.disabled = true;
-  } else {
+  if (playerOneGuess.value === '' && playerTwoGuess.value === '') {
     clearBtn.disabled = false;
+  } else {
+    clearBtn.disabled = true;
   }
 }
 
@@ -71,8 +78,7 @@ function disableReset() {
 }
 
 function clearFields() {
-  playerOneGuess.value = '';
-  playerTwoGuess.value = '';
+  clearGuess()
   guessOne.innerText = 97;
   guessTwo.innerText = 3;
   disableClear();
@@ -102,23 +108,33 @@ function useRange(min, max) {
   console.log(genNumber)
 }
 
-function displayLeftFeedback() {   
-  if (playerOneGuess.value > genNumber) {
-    leftTip.innerText = 'That\'s too high';
+// displayFeedback(playerOneGuess.value, leftTip)
+function displayFeedback(num, element) {
+  if (num > genNumber) {
+    element.innerText = 'That\'s too high';
   } else if (playerOneGuess.value < genNumber) {
-    leftTip.innerText = 'That\'s too low';
-  } else if (playerOneGuess.value === genNumber) {
-    leftTip.innerText = 'BOOM!'
+    element.innerText = 'That\'s too low';
+  } else {
+    element.innerText = 'BOOM!'
   }
 }
 
-function displayRightFeedback() {
-  if (playerTwoGuess.value > genNumber) {
-    rightTip.innerText = "That's too high";
-  } else if (playerTwoGuess.value < genNumber) {
-    rightTip.innerText = "That's too low";
-  } else if (playerTwoGuess.value === genNumber) {
-    rightTip.innerText = "BOOM!";
-  }
+function appendArticle() {
+if (rightSuggestion.innerText || leftSuggestion.innerText === 'BOOM!') {
+    rightSide.insertAdjacentHTML('afterbegin', `<article class="winner">
+        <header class="winner__header">
+            <h4>CHALLENGER 1</h4>
+            <p>VS</p>
+            <h4>CHALLENGER 2 NAME</h4>
+        </header>
+        <h2 class="winner__name">CHALLENGER 1 NAME</h2>
+        <h3 class="winner__status">WINNER</h3>
+        <footer>
+          <p class="winner__p"><span class="winner__span">2</span> GUESSES</p>
+          <p class="winner__p"><span class="winner__span">23</span> MINUTES</p>
+          <button>X</button>
+        </footer>
+        </header>`)
+      }
 }
 
