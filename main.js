@@ -2,8 +2,7 @@ var userMin = document.querySelector("#user-min");
 var userMax = document.querySelector("#user-max");
 var minDisplay = document.querySelector("#min-display");
 var maxDisplay = document.querySelector("#max-display");
-var minErr = document.querySelector("#minErr");
-var maxErr = document.querySelector("#maxErr");
+var conflictError = document.querySelector("#conflict-error");
 var updateBtn = document.querySelector("#update-btn");
 var submitBtn = document.querySelector("#submit-btn")
 var resetBtn = document.querySelector("#reset-btn");
@@ -25,13 +24,14 @@ updateBtn.addEventListener("click", updateRange);
 clearBtn.addEventListener('click', clearFields);
 submitBtn.addEventListener('click', submitFunc)
 leftSide.addEventListener("keyup", disableBtns);
+conflictError.addEventListener('click', guessesError);
 
 // Functions
 function guessesError() {
   if (userMin.value > userMax.value) {
-    minErr.style.visibility = 'visible';
-  } else if (userMax.value < userMin.value) {
-    maxErr.style.visibility = 'visible';
+    conflictError.style.visibility = 'visible';
+  } else {
+    conflictError.style.visibility = 'hidden';
   }
 }
 
@@ -48,6 +48,7 @@ function submitFunc(e) {
 }
 
 function updateRange() {
+  guessesError();
   minDisplay.innerHTML = userMin.value;
   maxDisplay.innerHTML = userMax.value;
   useRange(userMin.value, userMax.value);
