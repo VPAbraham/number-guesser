@@ -23,10 +23,18 @@
             <div class="div label-input">
               <label class="range__label" for="user-min">Min Range</label>
               <input type="number" class="range__input" id="user-min">
+              <div class="range__error" id="min-err">
+                <img src="images/error-icon.svg">
+                <p class="error__text">Invalid range</p>
+              </div>
             </div>
             <div class="div label-input">
               <label class="range__label" for="user-max">Max Range</label>
               <input type="number" class="range__input" id="user-max">
+              <div class="range__error" id="max-err">
+                <img src="images/error-icon.svg">
+                <p class="error__text">Invalid range</p>
+              </div>
             </div>
             <button class="range__button" id="update-btn" type="button">UPDATE</button>
           </form>
