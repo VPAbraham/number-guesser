@@ -27,7 +27,8 @@ var rightSide = document.querySelector('.right-pane')
 // leftSide.addEventListener('click', runAll)
 updateBtn.addEventListener('click', updateRange);
 clearBtn.addEventListener('click', clearFields);
-submitBtn.addEventListener('click', submitFunc)
+submitBtn.addEventListener('click', submitFunc);
+resetBtn.addEventListener('click', resetGame);
 leftSide.addEventListener('keyup', disableBtns);
 conflictError.addEventListener('click', guessesError);
 
@@ -51,7 +52,6 @@ function submitFunc(e) {
   e.preventDefault();
   displayGuess();
   displayName();
-  guessesError();
   displayFeedback(playerOneGuess.value, leftSuggestion);
   displayFeedback(playerTwoGuess.value, rightSuggestion);
 }
@@ -88,6 +88,16 @@ function disableReset() {
   resetBtn.disabled = false;
 }
 
+function resetGame() {
+  minDisplay.innerText = "1";
+  maxDisplay.innerText = "100";
+  guessOne.innerText = "?";
+  guessTwo.innerText = "?";
+  challengerOne.innerText = 'Challenger 1 Name';
+  challengerTwo.innerText = 'Challenger 2 Name';
+  genNum();
+}
+
 function clearFields() {
   clearGuess()
   guessOne.innerText = '?';
@@ -107,7 +117,8 @@ function displayName() {
 }
 
 function genNum() {
-  return Math.floor(Math.random() * (100 - 1)) + 1;
+  genNumber = Math.floor(Math.random() * (100 - 1)) + 1;
+  return genNumber;
 }
 
 console.log(genNum())
