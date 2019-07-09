@@ -34,6 +34,8 @@ conflictError.addEventListener('click', guessesError);
 function guessesError() {
   if (userMin.value > userMax.value) {
     conflictError.style.visibility = 'visible';
+  } else if (userMin.value === '' || userMax.value === '') {
+    conflictError.style.visibility = 'visible';
   } else {
     conflictError.style.visibility = 'hidden';
   }
@@ -56,16 +58,12 @@ function submitFunc(e) {
 function updateRange() {
   guessesError();
   if (userMin.value === '' || maxDisplay.value === '') {
-    minDisplay.innerText = '?';
-    maxDisplay.innerText = '?';
+    minDisplay.innerText = '1';
+    maxDisplay.innerText = '100';
   } else {  
     minDisplay.innerHTML = userMin.value;
     maxDisplay.innerHTML = userMax.value;
     useRange(userMin.value, userMax.value);
-    userMin.value = '';
-    userMax.value = '';
-    displayFeedback(playerOneGuess.value, leftSuggestion);
-    displayFeedback(playerTwoGuess.value, rightSuggestion);
   }
 }
 

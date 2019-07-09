@@ -166,9 +166,9 @@ button {
   color: #FFFFFF;
   font-weight: 700;
   height: 24px;
-  /* display: inline-block; */
-  width: 30%;
   margin: 3% 0 1% 2%;
+  outline: none;
+  width: 30%;
 }
 
 button:disabled {
