@@ -49,23 +49,15 @@ function submitFunc(e) {
   displayGuess();
   displayName();
   guessesError();
+  displayFeedback(playerOneGuess.value, leftSuggestion);
+  displayFeedback(playerTwoGuess.value, rightSuggestion);
 }
-
-// function updateRange() {
-
-//   minDisplay.innerHTML = userMin.value;
-//   maxDisplay.innerHTML = userMax.value;
-//   useRange(userMin.value, userMax.value);
-//   userMin.value = '';
-//   userMax.value = '';
-  
-// }
 
 function updateRange() {
   guessesError();
   if (userMin.value === '' || maxDisplay.value === '') {
-    minDisplay.innerText = 1;
-    maxDisplay.innerText = 100;
+    minDisplay.innerText = '?';
+    maxDisplay.innerText = '?';
   } else {  
     minDisplay.innerHTML = userMin.value;
     maxDisplay.innerHTML = userMax.value;
@@ -74,7 +66,6 @@ function updateRange() {
     userMax.value = '';
     displayFeedback(playerOneGuess.value, leftSuggestion);
     displayFeedback(playerTwoGuess.value, rightSuggestion);
-    appendArticle();
   }
 }
 
@@ -100,8 +91,8 @@ function disableReset() {
 
 function clearFields() {
   clearGuess()
-  guessOne.innerText = 97;
-  guessTwo.innerText = 3;
+  guessOne.innerText = '?';
+  guessTwo.innerText = '?';
   disableClear();
 }
 
@@ -133,10 +124,13 @@ function useRange(min, max) {
 function displayFeedback(num, element) {
   if (num > genNumber) {
     element.innerText = 'That\'s too high';
-  } else if (playerOneGuess.value < genNumber) {
+  } else if (num < genNumber) {
     element.innerText = 'That\'s too low';
   } else {
     element.innerText = 'BOOM!'
+    appendArticle();
+    var newNum = genNum();
+    console.log(newNum)
   }
 }
 
