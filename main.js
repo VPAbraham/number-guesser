@@ -21,6 +21,7 @@ var rightSuggestion = document.querySelector('#right-tip');
 var leftSide = document.querySelector('.left-pane');
 var rightSide = document.querySelector('.right-pane')
 
+
 // Event Listeners
 
 // leftSide.addEventListener('click', runAll)
@@ -112,13 +113,23 @@ function genNum() {
 console.log(genNum())
 
 function useRange(min, max) {
-  var min = parseInt(min);
-  var max = parseInt(max);
-  genNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  var rangeMin = parseInt(min);
+  var rangeMax = parseInt(max);
+  genNumber = Math.floor(Math.random() * (rangeMax - rangeMin + 1)) + rangeMin;
   console.log(genNumber)
 }
 
-// displayFeedback(playerOneGuess.value, leftTip)
+function adjustRange() {
+  var winMin = parseInt(minDisplay.innerText);
+  var winMax = parseInt(maxDisplay.innerText);
+  minDisplay.innerHTML = parseInt(winMin) - 10;
+  maxDisplay.innerHTML = parseInt(winMax) + 10;
+  var newMin = parseInt(minDisplay.innerText);
+  var newMax = parseInt(maxDisplay.innerText);
+  var winNum = useRange(newMin, newMax);
+  return winNum;
+}
+
 function displayFeedback(num, element) {
   if (num > genNumber) {
     element.innerText = 'That\'s too high';
@@ -126,28 +137,28 @@ function displayFeedback(num, element) {
     element.innerText = 'That\'s too low';
   } else {
     element.innerText = 'BOOM!'
-    appendArticle();
-    var newNum = genNum();
-    console.log(newNum)
+    appendArticle(); 
+    adjustRange();
   }
 }
 
+
+
 function appendArticle() {
-if (rightSuggestion.innerText || leftSuggestion.innerText === 'BOOM!') {
-    rightSide.insertAdjacentHTML('afterbegin', `<article class='winner'>
-        <header class='winner__header'>
-            <h4>CHALLENGER 1</h4>
-            <p>VS</p>
-            <h4>CHALLENGER 2 NAME</h4>
-        </header>
-        <h2 class='winner__name'>CHALLENGER 1 NAME</h2>
-        <h3 class='winner__status'>WINNER</h3>
-        <footer>
-          <p class='winner__p'><span class='winner__span'>2</span> GUESSES</p>
-          <p class='winner__p'><span class='winner__span'>23</span> MINUTES</p>
-          <button>X</button>
-        </footer>
-        </header>`)
-      }
+  rightSide.insertAdjacentHTML('afterbegin', `<article class='winner'>
+      <header class='winner__header'>
+          <h4>CHALLENGER 1</h4>
+          <p>VS</p>
+          <h4>CHALLENGER 2 NAME</h4>
+      </header>
+      <h2 class='winner__name'>CHALLENGER 1 NAME</h2>
+      <h3 class='winner__status'>WINNER</h3>
+      <footer>
+        <p class='winner__p'><span class='winner__span'>2</span> GUESSES</p>
+        <p class='winner__p'><span class='winner__span'>23</span> MINUTES</p>
+        <button>X</button>
+      </footer>
+      </header>`)
 }
+
 
