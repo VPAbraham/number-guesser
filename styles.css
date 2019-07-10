@@ -55,7 +55,7 @@ width: 50%
 .label-input {
   display: inline-block;
   width: auto;
-  padding: 1pc 1pc
+  padding: 1pc 1pc 1pc 0;
 }
 
 .name-error {
@@ -89,6 +89,10 @@ width: 50%
   width: 33%;
 }
 
+#rangeputs {
+  padding-left: 2%;
+}
+
 .range__label {
   display: flex;
   color: #6E6E6E; 
@@ -96,7 +100,6 @@ width: 50%
 
 .range__input {
   width: 100%;
-
 }
 
 .range__button {
@@ -185,6 +188,17 @@ img {
   height: 25%;
 }
 
+.guess-input {
+  margin-left: 5%;
+  width: 80%
+}
+]
+
+#player-one-name,
+#player-two-name {
+  width: 170%;
+}
+
 /* .player__button {
   background-color: #6E6E6E;
   border-radius: 30px;
@@ -209,6 +223,10 @@ button {
 
 button:disabled {
   background-color: #D1D2D4;
+}
+
+button:hover:enabled {
+  background-color: #DD1972;
 }
 
 /*Scoreboard Card <---- Left Pane*/
