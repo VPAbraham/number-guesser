@@ -66,6 +66,8 @@ function updateRange() {
     maxDisplay.innerHTML = userMax.value;
     useRange(userMin.value, userMax.value);
   }
+  userMin.value = '';
+  userMax.value = '';
 }
 
 function clearGuess() {
