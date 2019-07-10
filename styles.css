@@ -57,6 +57,14 @@ width: 50%
   width: auto;
 }
 
+.name-error {
+  font-size: 10px;
+}
+
+.guess-error {
+  font-size: 10px;
+}
+
 /*Range Card <---- Left Pane*/
 
 .range {
@@ -100,6 +108,18 @@ img {
 .error__text {
   display: inline;
   font-size: 10px;
+}
+
+#name-error-msg-1,
+#guess-error-msg-1,
+#name-error-msg-2,
+#guess-error-msg-2 {
+  display: block;
+}
+
+.error-info {
+  font-size: 10px;
+  display: inline;
 }
 
 /*Player Card <---- Left Pane*/
