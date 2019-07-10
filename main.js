@@ -46,7 +46,7 @@ function rangeError() {
 }
 
 function guessesError() {
-  if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText) ) {
+  if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText)) {
     guessMsg1.style.visibility = 'visible'
   } else if (parseInt(playerTwoGuess.value) > parseInt(maxDisplay.innerText)) {
     console.log('hello')
