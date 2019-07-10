@@ -59,6 +59,18 @@ function guessesError() {
   }
 }
 
+function nameErrorCh1() {
+  if (playerOneName.value === '') {
+    nameMsg1.style.visibility = 'visible'
+  }
+}
+
+function nameErrorCh2() {
+  if (playerTwoName.value === '') {
+    nameMsg2.style.visibility = 'visible'
+  }
+}
+
 function disableBtns() {
   disableClear();
   disableReset();
@@ -67,6 +79,8 @@ function disableBtns() {
 function submitFunc(e) {
   e.preventDefault();
   guessesError();
+  nameErrorCh1();
+  nameErrorCh2();
   displayGuess();
   displayName();
   displayFeedback(playerOneGuess.value, leftSuggestion);
