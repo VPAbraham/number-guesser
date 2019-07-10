@@ -40,8 +40,12 @@ conflictError.addEventListener('click', guessesError);
 function rangeError() {
   if (userMin.value > userMax.value) {
     conflictError.style.visibility = 'visible';
+    userMin.style.border = 'solid 2px #DD1972';
+    userMax.style.border = 'solid 2px #DD1972';
   } else if (userMin.value === '' || userMax.value === '') {
     conflictError.style.visibility = 'visible';
+    userMin.style.border = 'solid 2px #DD1972';
+    userMax.style.border = 'solid 2px #DD1972';
   } else {
     conflictError.style.visibility = 'hidden';
   }
@@ -49,25 +53,31 @@ function rangeError() {
 
 function guessesError() {
   if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText)) {
-    guessMsg1.style.visibility = 'visible'
+    guessMsg1.style.visibility = 'visible';
+    playerOneGuess.style.border = 'solid 2px #DD1972';
   } else if (parseInt(playerTwoGuess.value) > parseInt(maxDisplay.innerText)) {
     guessMsg2.style.visibility = 'visible';
+    playerTwoGuess.style.border = 'solid 2px #DD1972';
   } else if (parseInt(playerOneGuess.value) < parseInt(minDisplay.innerText)) {
     guessMsg1.style.visibility = 'visible';
+    playerOneGuess.style.border = 'solid 2px #DD1972';
   } else if (parseInt(playerTwoGuess.value) < parseInt(minDisplay.innerText)) {
     guessMsg2.style.visibility = 'visible';
+    playerTwoGuess.style.border = 'solid 2px #DD1972';
   }
 }
 
 function nameErrorCh1() {
   if (playerOneName.value === '') {
-    nameMsg1.style.visibility = 'visible'
+    nameMsg1.style.visibility = 'visible';
+    playerOneName.style.border = 'solid 2px #DD1972';
   }
 }
 
 function nameErrorCh2() {
   if (playerTwoName.value === '') {
-    nameMsg2.style.visibility = 'visible'
+    nameMsg2.style.visibility = 'visible';
+    playerTwoName.style.border = 'solid 2px #DD1972';
   }
 }
 
