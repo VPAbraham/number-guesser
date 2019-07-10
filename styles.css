@@ -15,7 +15,7 @@ body {
 .header {
 align-items: center;
 background-color: #404041;
-height: 20%;
+height: 18%;
 width: 100%;
 text-align: center;
 padding: 0px;
@@ -29,7 +29,7 @@ h1 {
   color: #DD1972;
   font-size: 4em;
   margin: auto;
-  padding: 2% 0 .3% 0;
+  padding: 1% 0 .3% 0;
 }
 
 h2 {
@@ -55,27 +55,40 @@ width: 50%
 .label-input {
   display: inline-block;
   width: auto;
+  padding: 1pc 1pc
 }
 
 /*Range Card <---- Left Pane*/
+
 
 .range {
   background-color: white;
   border: solid 1px #6E6E6E;
   margin: 1%;
-  /* width: 90%; */
+}
+
+.range__form {
+  padding: 0% 3% 0% 0;
 }
 
 .range__header {
   color: #404041;
+  margin: 1pc .5pc;
+}
+
+.range-inputs {
+  height: 50%;
+  width: 33%;
 }
 
 .range__label {
   display: flex;
-  color: #6E6E6E;
+  color: #6E6E6E; 
 }
 
 .range__input {
+  width: 100%;
+
 }
 
 .range__button {
@@ -83,7 +96,7 @@ width: 50%
   background-color: #6E6E6E;
   color: #FFFFFF;
   font-weight: 700;
-  width: 77px;
+  width: 30%;
   height: 24px;
 }
 
@@ -115,6 +128,7 @@ img {
 
 .player__header {
   color: #6E6E6E;
+  padding: 0 0 0 2%;
 }
 
 #min-display {
@@ -130,7 +144,7 @@ img {
 }
 
 .player__form {
-
+  padding: 2%;
 }
 
 .player__name{
