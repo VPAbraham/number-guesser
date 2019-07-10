@@ -71,8 +71,8 @@ width: 50%
 
 .range {
   background-color: white;
-  border: solid 1px #6E6E6E;
-  margin: 1%;
+  border: solid 1px #D0D2D3;
+  margin: 2%;
 }
 
 .range__form {
@@ -146,8 +146,8 @@ img {
 
 .player {
   background-color: white;
-  border: solid 1px #6E6E6E;
-  margin: 1%;
+  border: solid 1px #D0D2D3;
+  margin: 2%;
   /* width: 90%; */
 }
 
@@ -233,25 +233,30 @@ button:hover:enabled {
 
 .scoreboard {
   background-color: white;
-  border: solid 1px #6E6E6E;
-  margin: 1%;
+  border: solid 1px #D0D2D3;
+  margin: 2%;
   /* width: 90%; */
 } 
 
 .score-box {
   display: flex;
-  margin: 0% 25%;
+  margin: 0 0 3% 8%;
   text-align: center;
-  width: 60%;
+  width: 80%;
 }
 
 .scoreboard__header {
-  margin: .9% 1%;
+  margin: 1% 2%;
 }
 
-.scoreboard__right,
+.scoreboard__right {
+  margin: 0 5%;
+  width: 50%;
+}
+
 .scoreboard__left {
-  margin: 0 4%;
+  margin: 0 5%;
+  width: 50%;
 }
 
 .scoreboard__player{
@@ -261,15 +266,19 @@ button:hover:enabled {
 .scoreboard__label {
   color: #6E6E6E;
   font-weight: 200;
+  margin-bottom: 1%;
 }
 
 .scoreboard__guess {
   color: #F74D9B;
-
+  font-size: 3em;
+  font-weight: 700;
+  margin: 0;
 }
 
 .scoreboard_prompt {
   color: #6E6E6E;
+  margin-top: 0;
 }
 
 #high-tip {
@@ -291,8 +300,7 @@ button:hover:enabled {
 
 .right-pane {
   background-color: #D1D2D4;
-  /* display: flex; */
-  /* flex-direction: columns; */
+  height: auto;
   width: 50%;
 }
 
@@ -302,11 +310,15 @@ button:hover:enabled {
   background-color: white;
   border: solid 1px #6E6E6E;
   margin: 1.5% 4.5%;
+  padding: 0 2%;
 }
 
 .winner__header {
+  align-items: center;
+  border-bottom: 1px solid #D0D2D3;
   display: flex;
-  justify-content: space-between;
+  margin-bottom: 4.5%;
+  justify-content: space-around;
   color: #404041;
 }
 
@@ -317,6 +329,8 @@ button:hover:enabled {
 .winner__name {
   color: #6E6E6E;
   text-align: center;
+  font-weight: 700;
+  font-size: 2em;
 }
 
 .winner__status {
@@ -324,19 +338,33 @@ button:hover:enabled {
   font-size: 33px;
   font-weight: 200;
   text-align: center;
+  margin: 3% 0;
 }
 
 footer {
+  border-top: 1px solid #D0D2D3;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 2%;
+}
+
+#delete-button {
+  border-radius: 50em;
+  margin: 0;
+  height:2vh;
+  text-align: center;
+  width: 1.287vw;
 }
 
 .winner__p {
   color: #6E6E6E;
+  font-weight: lighter;
 }
 
 .winner__span {
   color: #404041;
   font-size: 18px;
+  font-weight: 700;
 }
+

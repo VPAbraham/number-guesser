@@ -121,7 +121,8 @@ function disableReset() {
   resetBtn.disabled = false;
 }
 
-function resetGame() {
+function resetGame(e) {
+  e.preventDefault();
   minDisplay.innerText = "1";
   maxDisplay.innerText = "100";
   guessOne.innerText = "?";
