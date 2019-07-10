@@ -115,6 +115,7 @@ img {
 #name-error-msg-2,
 #guess-error-msg-2 {
   display: block;
+  visibility: hidden;
 }
 
 .error-info {
