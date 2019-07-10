@@ -11,6 +11,10 @@ var playerOneName = document.querySelector('#player-one-name');
 var playerTwoName = document.querySelector('#player-two-name');
 var playerOneGuess = document.querySelector('#player-one-guess');
 var playerTwoGuess = document.querySelector('#player-two-guess');
+var nameMsg1 = document.querySelector('#name-error-msg-1');
+var nameMsg2 = document.querySelector('#name-error-msg-2');
+var guessMsg1 = document.querySelector('#guess-error-msg-1');
+var guessMsg2 = document.querySelector('#guess-error-msg-2');
 var guessOne = document.querySelector('#player1-guess');
 var guessTwo = document.querySelector('#player2-guess');
 var challengerOne = document.querySelector('#player-one');
@@ -31,7 +35,7 @@ leftSide.addEventListener('keyup', disableBtns);
 
 
 // Functions
-function guessesError() {
+function rangeError() {
   if (userMin.value > userMax.value) {
     conflictError.style.visibility = 'visible';
   } else if (userMin.value === '' || userMax.value === '') {
@@ -41,9 +45,9 @@ function guessesError() {
   }
 }
 
-function rangeError() {
-  if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText) ) {
-    console.log('hola')
+function guessesError() {
+  if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText)) {
+    guessMsg1.style.visibility = 'visible'
   } else if (parseInt(playerTwoGuess.value) > parseInt(maxDisplay.innerText)) {
     console.log('hello')
   } else if (parseInt(playerOneGuess.value) < parseInt(minDisplay.innerText)) {
@@ -60,16 +64,15 @@ function disableBtns() {
 
 function submitFunc(e) {
   e.preventDefault();
-  rangeError();
+  guessesError();
   displayGuess();
   displayName();
-  guessesError();
   displayFeedback(playerOneGuess.value, leftSuggestion);
   displayFeedback(playerTwoGuess.value, rightSuggestion);
 }
 
 function updateRange() {
-  guessesError();
+  rangeError();
   if (userMin.value === '' || maxDisplay.value === '') {
     minDisplay.innerText = '1';
     maxDisplay.innerText = '100';
