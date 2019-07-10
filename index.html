@@ -39,23 +39,39 @@
           <p class="player__header">The Current Range is <span id="min-display">1</span> to <span id="max-display">100</span></p>
           <form class="player__form">
             <h3 class="player__name player-one">Challenger 1</h3>
-            <div class="label-input">
+            <div class="label-input"> 
               <label class="player__label" for="player-one-name">Name</label>
               <input type="text" class="player__input" id="player-one-name">
+              <div class="name-error" id="name-error-msg-1">
+                <img src="images/error-icon.svg">
+                <p class="error-info">Invalid name</p>
+              </div>
             </div>
             <div class="label-input"> 
               <label class="player__label">Guess</label>
               <input type="number" class="player__input  guess-input" id="player-one-guess" name="guess" >
+               <div class="guess-error" id="guess-error-msg-1">
+                <img src="images/error-icon.svg">
+                <p class="error-info">Guess not within range</p>
+              </div>
             </div>
             <h3 class="player__name player-two">Challenger 2</h3>
             <div class="label-input">
               <label class="player__label" for="player-two-name">Name</label>
               <input type="text" class=
             "player__input" id="player-two-name">
+              <div class="name-error" id="name-error-msg-2">
+                <img src="images/error-icon.svg">
+                <p class="error-info">Invalid name</p>
+              </div>
             </div>
             <div class="label-input">
               <label class="player__label">Guess</label>
-              <input type="number" class="player__input  guess-input" id="player-two-guess" name="guess" >
+              <input type="number" class="player__input  guess-input" id="player-two-guess" name="guess">
+              <div class= guess-error id="guess-error-msg-2">
+                <img src="images/error-icon.svg">
+                <p class="error-info">Guess not within range</p>
+              </div>
             </div>
             <div class="button-div"></div>
               <button class="player__button" id="submit-btn" >SUBMIT GUESS</S></button>

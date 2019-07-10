@@ -58,6 +58,14 @@ width: 50%
   padding: 1pc 1pc
 }
 
+.name-error {
+  font-size: 10px;
+}
+
+.guess-error {
+  font-size: 10px;
+}
+
 /*Range Card <---- Left Pane*/
 
 
@@ -114,6 +122,20 @@ img {
   display: inline;
   font-size: 10px;
 }
+
+#name-error-msg-1,
+#guess-error-msg-1,
+#name-error-msg-2,
+#guess-error-msg-2 {
+  display: block;
+  visibility: hidden;
+}
+
+.error-info {
+  font-size: 10px;
+  display: inline;
+}
+
 
 /*Player Card <---- Left Pane*/
 
