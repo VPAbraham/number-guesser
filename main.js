@@ -21,7 +21,7 @@ var challengerOne = document.querySelector('#player-one');
 var challengerTwo = document.querySelector('#player-two');
 var leftSuggestion = document.querySelector('#left-tip');
 var rightSuggestion = document.querySelector('#right-tip');
-
+var winName = document.querySelector('.winner__name')
 var leftSide = document.querySelector('.left-pane');
 var rightSide = document.querySelector('.right-pane')
 
@@ -67,17 +67,10 @@ function guessesError() {
   }
 }
 
-function nameErrorCh1() {
-  if (playerOneName.value === '') {
-    nameMsg1.style.visibility = 'visible';
-    playerOneName.style.border = 'solid 2px #DD1972';
-  }
-}
-
-function nameErrorCh2() {
-  if (playerTwoName.value === '') {
-    nameMsg2.style.visibility = 'visible';
-    playerTwoName.style.border = 'solid 2px #DD1972';
+function nameErrorCh1(input, message) {
+  if (input.value === '') {
+    message.style.visibility = 'visible';
+    input.style.border = 'solid 2px #DD1972';
   }
 }
 
@@ -89,10 +82,10 @@ function disableBtns() {
 function submitFunc(e) {
   e.preventDefault();
   guessesError();
-  nameErrorCh1();
-  nameErrorCh2();
-  displayGuess();
+  nameErrorCh1(playerOneGuess, nameMsg1);
+  nameErrorCh1(playerTwoGuess, nameMsg2);
   displayName();
+  displayGuess();
   displayFeedback(playerOneGuess.value, leftSuggestion);
   displayFeedback(playerTwoGuess.value, rightSuggestion);
 }
@@ -194,22 +187,27 @@ function displayFeedback(num, element) {
     element.innerText = 'BOOM!'
     appendArticle(); 
     adjustRange();
+      displayWinnerName(leftSuggestion, challengerOne);
+      displayWinnerName(rightSuggestion, challengerTwo);
   }
 }
 
-
+function displayWinnerName(suggestion, challenger) {
+  if (suggestion.innerText === 'BOOM!') {
+    winName.innerText = challenger.innerText
+    return winName
+  }
+}
 
 function appendArticle() {
-  if (leftSuggestion.innerText || rightSuggestion.innerText === 'BOOM!') {
-
-  }
+  console.log('hi')
   rightSide.insertAdjacentHTML('afterbegin', `<article class='winner'>
       <header class='winner__header'>
           <h4>${challengerOne.innerText}</h4>
           <p>VS</p>
           <h4>${challengerTwo.innerText}</h4>
       </header>
-      <h2 class='winner__name'>CHALLENGER 1 NAME</h2>
+      <h2 class='winner__name'>${winName}</h2>
       <h3 class='winner__status'>WINNER</h3>
       <footer>
         <p class='winner__p'><span class='winner__span'>2</span> GUESSES</p>
