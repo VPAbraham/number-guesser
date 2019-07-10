@@ -28,7 +28,7 @@ updateBtn.addEventListener('click', updateRange);
 clearBtn.addEventListener('click', clearFields);
 submitBtn.addEventListener('click', submitFunc)
 leftSide.addEventListener('keyup', disableBtns);
-conflictError.addEventListener('click', guessesError);
+
 
 // Functions
 function guessesError() {
@@ -41,6 +41,18 @@ function guessesError() {
   }
 }
 
+function rangeError() {
+  if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText) ) {
+    console.log('hola')
+  } else if (parseInt(playerTwoGuess.value) > parseInt(maxDisplay.innerText)) {
+    console.log('hello')
+  } else if (parseInt(playerOneGuess.value) < parseInt(minDisplay.innerText)) {
+    console.log('hi')
+  } else if (parseInt(playerTwoGuess.value) < parseInt(minDisplay.innerText)) {
+    console.log('hey')
+  }
+}
+
 function disableBtns() {
   disableClear();
   disableReset();
@@ -48,6 +60,7 @@ function disableBtns() {
 
 function submitFunc(e) {
   e.preventDefault();
+  rangeError();
   displayGuess();
   displayName();
   guessesError();
