@@ -51,11 +51,11 @@ function guessesError() {
   if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText)) {
     guessMsg1.style.visibility = 'visible'
   } else if (parseInt(playerTwoGuess.value) > parseInt(maxDisplay.innerText)) {
-    console.log('hello')
+    guessMsg2.style.visibility = 'visible';
   } else if (parseInt(playerOneGuess.value) < parseInt(minDisplay.innerText)) {
-    console.log('hi')
+    guessMsg1.style.visibility = 'visible';
   } else if (parseInt(playerTwoGuess.value) < parseInt(minDisplay.innerText)) {
-    console.log('hey')
+    guessMsg2.style.visibility = 'visible';
   }
 }
 
