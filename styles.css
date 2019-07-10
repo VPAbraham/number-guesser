@@ -15,10 +15,10 @@ body {
 .header {
 align-items: center;
 background-color: #404041;
-height: 18%;
+height: 23vh;
 width: 100%;
 text-align: center;
-padding: 0px;
+padding: none;
 }
 
 .guesser{
@@ -32,10 +32,24 @@ h1 {
   padding: 1% 0 .3% 0;
 }
 
+.header__uce {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 0 20% 0 20%;
+}
+
 h2 {
   color: white;
   font-weight: 300;
-  margin: 0.5% 0;
+}
+
+.uce-line {
+  background-color: white;
+  height: .2vh;
+  width: 6vw;
+  margin: 0 .6vw; 
 }
 
 /*Main Section (everything below header)*/
@@ -59,11 +73,11 @@ width: 50%
 }
 
 .name-error {
-  font-size: 10px;
+  color: #DD1972;
 }
 
 .guess-error {
-  font-size: 10px;
+  color: #DD1972;
 }
 
 /*Range Card <---- Left Pane*/
@@ -103,12 +117,13 @@ width: 50%
 }
 
 .range__button {
-  border-radius: 10px;
+  border-radius: 5em;
   background-color: #6E6E6E;
   color: #FFFFFF;
-  font-weight: 700;
-  width: 30%;
-  height: 24px;
+  font-weight: 600;
+  font-size: .9em;
+  width: 11vw;
+  height: 4vh;
 }
 
 .range__error {
@@ -117,13 +132,14 @@ width: 50%
 
 img {
   display: inline;
-  height: 10px;
-  width: 10px;
+  height: 1.3vh;
+  width: 1.3vw;
 }
 
 .error__text {
+  color: #DD1972;
   display: inline;
-  font-size: 10px;
+  font-size: .6em;
 }
 
 #name-error-msg-1,
@@ -135,7 +151,7 @@ img {
 }
 
 .error-info {
-  font-size: 10px;
+  font-size: .5em;
   display: inline;
 }
 
@@ -146,9 +162,8 @@ img {
 
 .player {
   background-color: white;
-  border: solid 1px #D0D2D3;
+  border: solid .01em #D0D2D3;
   margin: 2%;
-  /* width: 90%; */
 }
 
 .player__header {
@@ -209,16 +224,19 @@ img {
 } */
 
 
-
+.button-div {
+  display: flex;
+  align-content: space-around;
+}
 button {
-  border-radius: 10px;
+  border-radius: 5em;
   background-color: #6E6E6E;
   color: #FFFFFF;
   font-weight: 700;
-  height: 24px;
+  height: 3.5vh;
   margin: 3% 0 1% 2%;
   outline: none;
-  width: 30%;
+  width: 22vh;
 }
 
 button:disabled {
