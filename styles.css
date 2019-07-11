@@ -383,9 +383,11 @@ footer {
   font-weight: 700;
 }
 
-/*@media screen and (min-width: 1391px) {
+.range__header {
+@media screen and (min-width: 1441px) {
 
 .range__header {
+  color: #404041;
   font-size: 1.6em;
   margin: 1pc .5pc;
 }
@@ -409,10 +411,6 @@ img {
 }
 
 .player__label {
-  font-size: 1.3em;
-}
-
-.guess-input {
   width: 14.6vw;
 }
 
@@ -422,6 +420,7 @@ img {
 }
 
 button {
+
   border-radius: 5em;
   font-size: 1.1em;
   height: 3.5vh;
@@ -448,4 +447,5 @@ button {
 .scoreboard__prompt {
   font-size: 1.2em;
 }  
-}*/
+
+
