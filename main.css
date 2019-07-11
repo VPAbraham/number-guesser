@@ -2,7 +2,6 @@
   /*border: 1px solid red;*/
   /*margin: auto;*/
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -14,12 +13,12 @@ body {
 /* Header Section */
 
 .header {
-  align-items: center;
-  background-color: #404041;
-  height: 20%;
-  padding: none;
-  text-align: center;
-  width: 100%;
+align-items: center;
+background-color: #404041;
+height: 23vh;
+padding: none;
+text-align: center;
+width: 100%;
 }
 
 .guesser{
@@ -37,13 +36,12 @@ h1 {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: -1.5% 20% 0px 20%;
+  margin: 0 20% 0 20%;
   text-align: center;
 }
 
 h2 {
   color: white;
-  font-size: 1.5em;
   font-weight: 300;
 }
 
@@ -51,7 +49,7 @@ h2 {
   background-color: white;
   height: .2vh;
   margin: 0.6vw; 
-  width: 4.3vw;
+  width: 6vw;
 }
 
 
@@ -66,12 +64,13 @@ height: 200;
 /*Left Pane*/
 
 .left-pane {
-background-color: #f7f7f7;
-width: 50%;
+background-color: #F7F7F7;
+width: 50%
 }
 
 .label-input {
   display: inline-block;
+  padding: 1pc 1pc 1pc 0;
   width: auto;
 }
 
@@ -85,6 +84,7 @@ width: 50%;
 
 /*Range Card <---- Left Pane*/
 
+
 .range {
   background-color: white;
   border: solid 1px #D0D2D3;
@@ -92,24 +92,23 @@ width: 50%;
 }
 
 .range__form {
-  display: flex;
-  align-items: flex-start;
+  padding: 0% 3% 0% 0;
 }
 
 .range__header {
   color: #404041;
-  font-size: 1.5em;
-  margin: 1% 2%;
+  font-size: 1.4em;
+  margin: 1pc .5pc;
 }
 
 #rangeputs {
-  padding:0 2% 0 2%;
+  padding-left: 2%;
 }
 
 .range__label {
   color: #6E6E6E;
   display: flex;
-  font-size: .9em; 
+  font-size: 1em; 
 }
 
 .range__input {
@@ -121,10 +120,9 @@ width: 50%;
   background-color: #6E6E6E;
   border-radius: 5em;
   color: #FFFFFF;
-  font-size: 2vh;
+  font-size: 1.1em;
   font-weight: 600;
-  height: 3.7vh;
-  margin: 2% 5% 2% 10%;
+  height: 4vh;
   width: 11vw;
 }
 
@@ -134,8 +132,8 @@ width: 50%;
 
 img {
   display: inline;
-  height: .9vh;
-  width: .9vw;
+  height: 1.3vh;
+  width: 1.3vw;
 }
 
 .error__text {
@@ -160,6 +158,8 @@ img {
 
 /*Player Card <---- Left Pane*/
 
+
+
 .player {
   background-color: white;
   border: solid .01em #D0D2D3;
@@ -169,7 +169,6 @@ img {
 .player__header {
   color: #6E6E6E;
   padding: 0 0 0 2%;
-  margin-bottom: 0;
 }
 
 #min-display {
@@ -185,57 +184,53 @@ img {
 }
 
 .player__form {
-  padding: 0 2%;
+  padding: 2%;
 }
 
 .player__name{
   color: #404041;
-  font-size: 1.5em;
-  margin: 1.4% 0;
+  font-size: 1.3em;
 }
 
 .player__label {
   color: #6E6E6E;
   display: flex;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 200;
 }
 
 .player__input {
   color: #6E6E6E;
-  height: 4vh;
-  width: 25vw;
-}
-
-.guess-div {
-  margin-left: 3%;
+  /*font-weight: 200;*/
 }
 
 .guess-input {
-  width: 13vw;
+  height: 5vh;
+  margin-left: 5%;
+  width: 14.6vw;
 }
 
 #player-one-name,
 #player-two-name{
-  margin-right: 8%;
+  height: 5vh;
+  width: 16vw;
 }
 
 .button-div {
-  align-content: space-around;
   display: flex;
-  justify-content: center;
+  align-content: space-around;
 }
 button {
   background-color: #6E6E6E;
   border-radius: 5em;
   color: #FFFFFF;
-  font-size: 1.9vh;
+  font-size: 1.1em;
   font-weight: 600;
   height: 3.5vh;
   height: 5vh;
-  margin: 1.8% 0 3% 2%;
+  margin: 3% 0 1% 2%;
   outline: none;
-  width: 27vh;
+  width: 22vh;
 }
 
 button:disabled {
@@ -256,26 +251,19 @@ button:hover:enabled {
 
 .score-box {
   display: flex;
-  justify-content: center;
+  margin: 0 0 3% 8%;
   text-align: center;
-  width: 100%;
+  width: 80%;
 }
 
 .scoreboard__header {
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin: 1% 2%;
 }
 
 .scoreboard__right {
   margin: 0 5%;
   width: 50%;
-}
-
-#border {
-  border-left: solid 2px #D0D2D3;
-  position: relative;
-  height: 25vh;
-  margin-top: -2%;
 }
 
 .scoreboard__left {
@@ -285,36 +273,40 @@ button:hover:enabled {
 
 .scoreboard__player{
   color: #6E6E6E;
-  font-size: 2em;
-  margin: 0;
+  font-size: 1.2em;
 }
 
 .scoreboard__label {
   color: #6E6E6E;
-  font-size: 1.6em;
+  font-size: 1.18em;
   font-weight: 200;
-  margin: 0 0 1%;
+  margin-bottom: 1%;
 }
 
 .scoreboard__guess {
   color: #F74D9B;
-  font-size: 5em;
+  font-size: 6em;
   font-weight: 700;
   margin: 0;
 }
 
 .scoreboard__prompt {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 200;
   color: #6E6E6E;
   margin-top: 0;
 }
 
-#high-tip,
+#high-tip {
+  color: #6E6E6E;
+  font-weight: 200;
+}
+
 #low-tip {
   color: #6E6E6E;
   font-weight: 200;
 }
+
 
 /*Right Pane*/
 
@@ -323,6 +315,7 @@ button:hover:enabled {
   height: auto;
   width: 50%;
 }
+
 
 /*Winner Card ----> Right Pane*/
 
@@ -339,23 +332,25 @@ button:hover:enabled {
   color: #404041;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 3%;
+  margin-bottom: 4.5%;
+}
+
+.header__name {
+
 }
 
 .winner__name {
   color: #6E6E6E;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 700;
   text-align: center;
-  font-weight: 700;
-  margin: 0;
 }
 
 .winner__status {
   color: #6E6E6E;
   font-size: 33px;
   font-weight: 200;
-  margin: 0 0 4% 0;
+  margin: 3% 0;
   text-align: center;
 }
 
@@ -369,7 +364,7 @@ footer {
 
 #delete-button {
   border-radius: 50em;
-  height: 1%;
+  height:2vh;
   margin: 0;
   text-align: center;
   width: 1.287vw;
@@ -385,157 +380,4 @@ footer {
   font-size: 18px;
   font-weight: 700;
 }
-
-@media screen and (max-width: 1125px) {
-
-  h2 {
-    color: white;
-    font-size: 1.2em;
-    font-weight: 300;
-  }
-
-  main {
-    display: block;
-  }
-
-  h1 {
-    color: #DD1972;
-    font-size: 3em;
-    margin: auto;
-    padding: 1% 0 .3% 0;
-  }
-
-  .left-pane {
-    width: 100%;
-  }
-
-  .right-pane {
-    width: 100%
-  }
-
-  .range__header {
-    color: #404041;
-    font-size: 1.2em;
-    margin: 1% 2%;
-  }
-
-  .range__input {
-    color: #6E6E6E;
-    height: 6vh;
-    width: 30vw;
-  }
-
-  .range__button {
-    background-color: #6E6E6E;
-    border-radius: 5em;
-    color: #FFFFFF;
-    font-size: 2.6vh;
-    font-weight: 600;
-    height: 4.7vh;
-    margin: 2% 5% 2% 10%;
-    width: 29vw;
-  } 
-
-  .player__header {
-    color: #6E6E6E;
-    padding: 0 0 0 2%;
-    margin-bottom: 0;
-    font-size: .8em;
-  }
-
-  .player__name {
-    color: #404041;
-    font-size: 1.1em;
-    margin: 1.4% 0;
-  }
-
-  .player__input {
-    color: #6E6E6E;
-    height: 6vh;
-    width: 45vw;
-  }
-
-@media screen and (max-width: 600px) {
-}
-  h2 {
-    color: white;
-    font-size: 1.2em;
-    font-weight: 300;
-  }
-
-  main {
-    display: block;
-  }
-
-  h1 {
-    color: #DD1972;
-    font-size: 3em;
-    margin: auto;
-    padding: 1% 0 .3% 0;
-  }
-
-  .left-pane {
-    width: 100%;
-  }
-
-  .right-pane {
-    width: 100%
-  }
-
-  .range__header {
-    color: #404041;
-    font-size: 1.2em;
-    margin: 1% 2%;
-  }
-
-  .range__input {
-    color: #6E6E6E;
-    height: 4vh;
-    width: 30vw;
-  } 
-
-  .range__button {
-    background-color: #6E6E6E;
-    border-radius: 5em;
-    color: #FFFFFF;
-    font-size: 2.2vh;
-    font-weight: 600;
-    height: 4.7vh;
-    margin: 2% 5% 2% 10%;
-    width: 29vw;
-  } 
-
-  .player__header {
-    color: #6E6E6E;
-    padding: 0 0 0 2%;
-    margin-bottom: 0;
-    font-size: .8em;
-  }
-
-  .player__name {
-    color: #404041;
-    font-size: 1.1em;
-    margin: 1.4% 0;
-  }
-
-  .player__input {
-    color: #6E6E6E;
-    height: 6vh;
-    width: 45vw;
-  }
-
-.button-div {
-    align-content: space-around;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-.scoreboard__player {
-    color: #6E6E6E;
-    font-size: 1.em;
-    margin: 0;
-  }
-   
-
 
