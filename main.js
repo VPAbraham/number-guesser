@@ -21,10 +21,7 @@ var rightSuggestion = document.querySelector('#right-tip');
 var leftSide = document.querySelector('.left-pane');
 var rightSide = document.querySelector('.right-pane')
 
-
 // Event Listeners
-
-// leftSide.addEventListener('click', runAll)
 updateBtn.addEventListener('click', updateRange);
 clearBtn.addEventListener('click', clearFields);
 submitBtn.addEventListener('click', submitFunc)
@@ -32,7 +29,39 @@ leftSide.addEventListener('keyup', disableBtns);
 
 
 // Functions
-function guessesError() {
+function disableBtns() {
+  disableClear();
+  disableReset();
+}
+
+function disableClear() {
+  if (playerOneGuess.value === "" && playerTwoGuess.value === "") {
+    clearBtn.disabled = false;
+  } else {
+    clearBtn.disabled = true;
+  }
+}
+
+function disableReset() {
+  if (playerOneName.value && playerTwoName.value === "") {
+    resetBtn.disabled = true;
+  } else resetBtn.disabled = false;
+}
+
+function submitFunc(e) {
+  e.preventDefault();
+  guessesError();
+  nameErrorCh1(playerOneGuess, guessMsg1);
+  nameErrorCh1(playerTwoGuess, guessMsg2);
+  nameErrorCh1(playerOneName, nameMsg1);
+  nameErrorCh1(playerTwoName, nameMsg2);
+  displayName();
+  displayGuess();
+  displayFeedback(playerOneGuess.value, leftSuggestion);
+  displayFeedback(playerTwoGuess.value, rightSuggestion);
+}
+
+function rangeError() {
   if (userMin.value > userMax.value) {
     conflictError.style.visibility = 'visible';
   } else if (userMin.value === '' || userMax.value === '') {
@@ -42,31 +71,31 @@ function guessesError() {
   }
 }
 
-function rangeError() {
-  if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText) ) {
-    console.log('hola')
+function guessesError() {
+  if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText)) {
+    guessMsg1.style.visibility = 'visible';
+    playerOneGuess.style.border = 'solid 2px #DD1972';
+    return
   } else if (parseInt(playerTwoGuess.value) > parseInt(maxDisplay.innerText)) {
-    console.log('hello')
+    guessMsg2.style.visibility = 'visible';
+    playerTwoGuess.style.border = 'solid 2px #DD1972';
+    return
   } else if (parseInt(playerOneGuess.value) < parseInt(minDisplay.innerText)) {
-    console.log('hi')
+    guessMsg1.style.visibility = 'visible';
+    playerOneGuess.style.border = 'solid 2px #DD1972';
+    return
   } else if (parseInt(playerTwoGuess.value) < parseInt(minDisplay.innerText)) {
-    console.log('hey')
+    guessMsg2.style.visibility = 'visible';
+    playerTwoGuess.style.border = 'solid 2px #DD1972';
+    return
   }
 }
 
-function disableBtns() {
-  disableClear();
-  disableReset();
-}
-
-function submitFunc(e) {
-  e.preventDefault();
-  rangeError();
-  displayGuess();
-  displayName();
-  guessesError();
-  displayFeedback(playerOneGuess.value, leftSuggestion);
-  displayFeedback(playerTwoGuess.value, rightSuggestion);
+function nameErrorCh1(input, message) {
+  if (input.value === '') {
+    message.style.visibility = 'visible';
+    input.style.border = 'solid 2px #DD1972';
+  }
 }
 
 function updateRange() {
@@ -86,28 +115,12 @@ function clearGuess() {
   playerTwoGuess.value = '';
 }
 
-function disableClear() {
-  if (playerOneGuess.value === '' && playerTwoGuess.value === '') {
-    clearBtn.disabled = false;
-  } else {
-    clearBtn.disabled = true;
-  }
-}
-
-function disableReset() {
-  if (playerOneName.value && playerTwoName.value === '') {
-    resetBtn.disabled = true;
-  } else 
-  resetBtn.disabled = false;
-}
-
 function clearFields() {
-  clearGuess()
-  guessOne.innerText = '?';
-  guessTwo.innerText = '?';
+  clearGuess();
+  guessOne.innerText = "?";
+  guessTwo.innerText = "?";
   disableClear();
 }
-
 
 function displayGuess() {
   guessOne.innerText = playerOneGuess.value;
@@ -117,6 +130,17 @@ function displayGuess() {
 function displayName() {
   challengerOne.innerText = playerOneName.value;
   challengerTwo.innerText = playerTwoName.value;
+}
+
+function resetGame(e) {
+  e.preventDefault();
+  minDisplay.innerText = "1";
+  maxDisplay.innerText = "100";
+  guessOne.innerText = "?";
+  guessTwo.innerText = "?";
+  challengerOne.innerText = 'Challenger 1 Name';
+  challengerTwo.innerText = 'Challenger 2 Name';
+  genNum();
 }
 
 function genNum() {
@@ -143,6 +167,16 @@ function adjustRange() {
   return winNum;
 }
 
+function displayGuess() {
+  guessOne.innerText = playerOneGuess.value;
+  guessTwo.innerText = playerTwoGuess.value;
+}
+
+function displayName() {
+  challengerOne.innerText = playerOneName.value;
+  challengerTwo.innerText = playerTwoName.value;
+}
+
 function displayFeedback(num, element) {
   if (num > genNumber) {
     element.innerText = 'That\'s too high';
@@ -154,8 +188,6 @@ function displayFeedback(num, element) {
     adjustRange();
   }
 }
-
-
 
 function appendArticle() {
   rightSide.insertAdjacentHTML('afterbegin', `<article class='winner'>
@@ -173,5 +205,4 @@ function appendArticle() {
       </footer>
       </header>`)
 }
-
 

@@ -2,10 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Number Guesser Game</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
   <body>
     <header class="header">
       <h1>NUMBER<span class="guesser">GUESSER</span></h1>
@@ -51,7 +53,7 @@
                 <p class="error-info">Invalid name</p>
               </div>
             </div>
-            <div class="label-input"> 
+            <div class="label-input guess-div"> 
               <label class="player__label">Guess</label>
               <input type="number" class="player__input  guess-input" id="player-one-guess" name="guess" >
                 <div class="guess-error" id="guess-error-msg-1">
@@ -69,7 +71,7 @@
                 <p class="error-info">Invalid name</p>
               </div>
             </div>
-            <div class="label-input">
+            <div class="label-input guess-div">
               <label class="player__label">Guess</label>
               <input type="number" class="player__input  guess-input" id="player-two-guess" name="guess">
               <div class= guess-error id="guess-error-msg-2">
@@ -93,6 +95,7 @@
                 <p class="scoreboard__guess" id="player1-guess">?</p>
                 <p class="scoreboard__prompt" id="left-tip" >that's too high</p>
               </div>
+              <div id="border"></div>
               <div class="scoreboard__right">
                 <h4 class="scoreboard__player" id="player-two">Challenger 2 Name</h4>
                 <p class="scoreboard__label">current guess</p>
@@ -103,7 +106,7 @@
         </article>
       </section>  
       <section class="right-pane">
-       <!--  <article class="winner">
+        <article class="winner">
           <header class="winner__header">
             <h4>CHALLENGER 1 NAME</h4>
             <p>VS</p>
@@ -117,7 +120,7 @@
             <button id="delete-button">X</button>
           </footer>
           </header> 
-        </article> -->
+        </article>
       </section>
     </main>
   </body>

@@ -1,0 +1,34 @@
+## Number Guesser
+A number game challenge to improve skills in HTML, CSS, and JavaScript.
+
+## Challenge
+To build a number guessing game, allowing two players to guess a random number,
+head-to-head.
+
+## Features
+Utilizes:
+- Customizable ranges
+- Interactive buttons
+- Responsive size scaling
+- Increasing difficulty increments
+- Dynamic
+win badges
+- Mobile-ready
+
+
+## Screenshots
+<!-- screenshots go here -->
+[
+[
+-
+<!-- screenshots go here -->
+]
+]
+
+
+
+## Code Example
+`Code snippets go here Code snippets go here Code snippets go here Code snippets go here Code snippets go here Code snippets go here Code snippets go here Code snippets go here Code snippets go here.`
+
+## Credits
+Co-developed by Turing Students, Colin Koga and Victor Abraham

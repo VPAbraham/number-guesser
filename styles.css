@@ -529,12 +529,13 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+  }
 
 .scoreboard__player {
     color: #6E6E6E;
     font-size: 1.em;
     margin: 0;
   }
-  
-}  
+   
+
+
