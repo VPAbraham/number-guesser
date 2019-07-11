@@ -369,10 +369,9 @@ footer {
 
 #delete-button {
   border-radius: 50em;
-  height: 1%;
+  height: .3vh;
   margin: 0;
   text-align: center;
-  width: 1.287vw;
 }
 
 .winner__p {

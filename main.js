@@ -11,10 +11,15 @@ var playerOneName = document.querySelector('#player-one-name');
 var playerTwoName = document.querySelector('#player-two-name');
 var playerOneGuess = document.querySelector('#player-one-guess');
 var playerTwoGuess = document.querySelector('#player-two-guess');
+var nameMsg1 = document.querySelector('#name-error-msg-1');
+var nameMsg2 = document.querySelector('#name-error-msg-2');
+var guessMsg1 = document.querySelector('#guess-error-msg-1');
+var guessMsg2 = document.querySelector('#guess-error-msg-2');
 var guessOne = document.querySelector('#player1-guess');
 var guessTwo = document.querySelector('#player2-guess');
 var challengerOne = document.querySelector('#player-one');
 var challengerTwo = document.querySelector('#player-two');
+var winName = document.querySelector('.winner__name')
 var leftSuggestion = document.querySelector('#left-tip');
 var rightSuggestion = document.querySelector('#right-tip');
 
@@ -64,8 +69,12 @@ function submitFunc(e) {
 function rangeError() {
   if (userMin.value > userMax.value) {
     conflictError.style.visibility = 'visible';
+    userMin.style.border = 'solid 2px #DD1972'
+    userMax.style.border = 'solid 2px #DD1972';
   } else if (userMin.value === '' || userMax.value === '') {
-    conflictError.style.visibility = 'visible';
+    conflictError.style.visibility = 'visible'
+    userMin.style.border = 'solid 2px #DD1972';
+    userMax.style.border = 'solid 2px #DD1972';
   } else {
     conflictError.style.visibility = 'hidden';
   }
@@ -99,7 +108,7 @@ function nameErrorCh1(input, message) {
 }
 
 function updateRange() {
-  guessesError();
+  rangeError();
   if (userMin.value === '' || maxDisplay.value === '') {
     minDisplay.innerText = '1';
     maxDisplay.innerText = '100';
@@ -189,14 +198,23 @@ function displayFeedback(num, element) {
   }
 }
 
+function displayWinnerName(suggestion, challenger) {
+  if (suggestion.innerText === "BOOM!") {
+    winName = challenger.innerText;
+    return winName;
+  }
+}
+
 function appendArticle() {
+  displayWinnerName(leftSuggestion, challengerOne);
+  displayWinnerName(rightSuggestion, challengerTwo);
   rightSide.insertAdjacentHTML('afterbegin', `<article class='winner'>
       <header class='winner__header'>
-          <h4>CHALLENGER 1</h4>
+          <h4>${challengerOne.innerText}</h4>
           <p>VS</p>
-          <h4>CHALLENGER 2 NAME</h4>
+          <h4>${challengerTwo.innerText}</h4>
       </header>
-      <h2 class='winner__name'>CHALLENGER 1 NAME</h2>
+      <h2 class='winner__name'>${winName}</h2>
       <h3 class='winner__status'>WINNER</h3>
       <footer>
         <p class='winner__p'><span class='winner__span'>2</span> GUESSES</p>
