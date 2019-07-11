@@ -2,6 +2,7 @@
   /*border: 1px solid red;*/
   /*margin: auto;*/
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -57,7 +58,7 @@ h2 {
 
 main {
 display: flex;
-height: 122vh;
+height: 200;
 }
 
 
@@ -92,12 +93,14 @@ width: 50%
 }
 
 .range__form {
+  display: flex;
+  align-items: flex-start;
   padding: 0% 3% 0% 0;
 }
 
 .range__header {
   color: #404041;
-  font-size: 1.6em;
+  font-size: 1.3em;
   margin: 1pc .5pc;
 }
 
@@ -108,21 +111,22 @@ width: 50%
 .range__label {
   color: #6E6E6E;
   display: flex;
-  font-size: 1.3em; 
+  font-size: .9em; 
 }
 
 .range__input {
   height: 3.5vh;
-  width: 13vw;
+  width: 15vw;
 }
 
 .range__button {
   background-color: #6E6E6E;
   border-radius: 5em;
   color: #FFFFFF;
-  font-size: 1.1em;
+  font-size: 2vh;
   font-weight: 600;
   height: 4vh;
+  margin-top: 3.8vh;
   width: 11vw;
 }
 
@@ -132,8 +136,8 @@ width: 50%
 
 img {
   display: inline;
-  height: 1.3vh;
-  width: 1.3vw;
+  height: .9vh;
+  width: .9vw;
 }
 
 .error__text {
@@ -189,13 +193,13 @@ img {
 
 .player__name{
   color: #404041;
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 
 .player__label {
   color: #6E6E6E;
   display: flex;
-  font-size: 1.3em;
+  font-size: .9em;
   font-weight: 200;
 }
 
@@ -207,30 +211,31 @@ img {
 .guess-input {
   height: 5vh;
   margin-left: 5%;
-  width: 14.6vw;
+  width: 16vw;
 }
 
 #player-one-name,
 #player-two-name{
   height: 5vh;
-  width: 29vw;
+  width: 26vw;
 }
 
 .button-div {
-  display: flex;
   align-content: space-around;
+  display: flex;
+  justify-content: center;
 }
 button {
   background-color: #6E6E6E;
   border-radius: 5em;
   color: #FFFFFF;
-  font-size: 1.1em;
+  font-size: 1.9vh;
   font-weight: 600;
   height: 3.5vh;
   height: 5vh;
   margin: 3% 0 1% 2%;
   outline: none;
-  width: 22vh;
+  width: 27vh;
 }
 
 button:disabled {
@@ -257,7 +262,7 @@ button:hover:enabled {
 }
 
 .scoreboard__header {
-  font-size: 1.6em;
+  font-size: 1.3em;
   margin: 1% 2%;
 }
 
@@ -273,25 +278,25 @@ button:hover:enabled {
 
 .scoreboard__player{
   color: #6E6E6E;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .scoreboard__label {
   color: #6E6E6E;
-  font-size: 1.18em;
+  font-size: 1em;
   font-weight: 200;
   margin-bottom: 1%;
 }
 
 .scoreboard__guess {
   color: #F74D9B;
-  font-size: 6em;
+  font-size: 4em;
   font-weight: 700;
   margin: 0;
 }
 
 .scoreboard__prompt {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 200;
   color: #6E6E6E;
   margin-top: 0;

@@ -3,13 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
-  <meta name="author" content="name">
-  <meta name="description" content="description here">
-  <meta name="keywords" content="keywords,here">
-  <link rel="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+    <title>Number Guesser</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" type="text/css">
-  </head>
+</head>
   <body>
     <header class="header">
       <h1>NUMBER<span class="guesser">GUESSER</span></h1>
@@ -27,16 +24,20 @@
             <div class="range-inputs label-input" id="rangeputs">
               <label class="range__label" for="user-min">Min Range</label>
               <input type="number" class="range__input" id="user-min">
+              <div class="range__error" id="conflict-error">
+                <img src="images/error-icon.svg">
+                <p class="error__text">Invalid range</p>
+              </div>
             </div>
             <div class="range-inputs label-input">
               <label class="range__label" for="user-max">Max Range</label>
               <input type="number" class="range__input" id="user-max">
             </div>
             <button class="range__button" id="update-btn" type="button">UPDATE</button>
-            <div class="range__error" id="conflict-error">
+            <!-- <div class="range__error" id="conflict-error">
               <img src="images/error-icon.svg">
               <p class="error__text">Invalid range</p>
-            </div>
+            </div> -->
           </form>
         </article>
         <article class="player">
