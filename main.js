@@ -11,17 +11,13 @@ var playerOneName = document.querySelector('#player-one-name');
 var playerTwoName = document.querySelector('#player-two-name');
 var playerOneGuess = document.querySelector('#player-one-guess');
 var playerTwoGuess = document.querySelector('#player-two-guess');
-var nameMsg1 = document.querySelector('#name-error-msg-1');
-var nameMsg2 = document.querySelector('#name-error-msg-2');
-var guessMsg1 = document.querySelector('#guess-error-msg-1');
-var guessMsg2 = document.querySelector('#guess-error-msg-2');
 var guessOne = document.querySelector('#player1-guess');
 var guessTwo = document.querySelector('#player2-guess');
 var challengerOne = document.querySelector('#player-one');
 var challengerTwo = document.querySelector('#player-two');
 var leftSuggestion = document.querySelector('#left-tip');
 var rightSuggestion = document.querySelector('#right-tip');
-var winName = document.querySelector('.winner__name')
+
 var leftSide = document.querySelector('.left-pane');
 var rightSide = document.querySelector('.right-pane')
 
@@ -31,46 +27,30 @@ var rightSide = document.querySelector('.right-pane')
 // leftSide.addEventListener('click', runAll)
 updateBtn.addEventListener('click', updateRange);
 clearBtn.addEventListener('click', clearFields);
-submitBtn.addEventListener('click', submitFunc);
-resetBtn.addEventListener('click', resetGame);
+submitBtn.addEventListener('click', submitFunc)
 leftSide.addEventListener('keyup', disableBtns);
-conflictError.addEventListener('click', guessesError);
+
 
 // Functions
-function rangeError() {
+function guessesError() {
   if (userMin.value > userMax.value) {
     conflictError.style.visibility = 'visible';
-    userMin.style.border = 'solid 2px #DD1972';
-    userMax.style.border = 'solid 2px #DD1972';
   } else if (userMin.value === '' || userMax.value === '') {
     conflictError.style.visibility = 'visible';
-    userMin.style.border = 'solid 2px #DD1972';
-    userMax.style.border = 'solid 2px #DD1972';
   } else {
     conflictError.style.visibility = 'hidden';
   }
 }
 
-function guessesError() {
-  if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText)) {
-    guessMsg1.style.visibility = 'visible';
-    playerOneGuess.style.border = 'solid 2px #DD1972';
+function rangeError() {
+  if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText) ) {
+    console.log('hola')
   } else if (parseInt(playerTwoGuess.value) > parseInt(maxDisplay.innerText)) {
-    guessMsg2.style.visibility = 'visible';
-    playerTwoGuess.style.border = 'solid 2px #DD1972';
+    console.log('hello')
   } else if (parseInt(playerOneGuess.value) < parseInt(minDisplay.innerText)) {
-    guessMsg1.style.visibility = 'visible';
-    playerOneGuess.style.border = 'solid 2px #DD1972';
+    console.log('hi')
   } else if (parseInt(playerTwoGuess.value) < parseInt(minDisplay.innerText)) {
-    guessMsg2.style.visibility = 'visible';
-    playerTwoGuess.style.border = 'solid 2px #DD1972';
-  }
-}
-
-function nameErrorCh1(input, message) {
-  if (input.value === '') {
-    message.style.visibility = 'visible';
-    input.style.border = 'solid 2px #DD1972';
+    console.log('hey')
   }
 }
 
@@ -81,17 +61,16 @@ function disableBtns() {
 
 function submitFunc(e) {
   e.preventDefault();
-  guessesError();
-  nameErrorCh1(playerOneGuess, nameMsg1);
-  nameErrorCh1(playerTwoGuess, nameMsg2);
-  displayName();
+  rangeError();
   displayGuess();
+  displayName();
+  guessesError();
   displayFeedback(playerOneGuess.value, leftSuggestion);
   displayFeedback(playerTwoGuess.value, rightSuggestion);
 }
 
 function updateRange() {
-  rangeError();
+  guessesError();
   if (userMin.value === '' || maxDisplay.value === '') {
     minDisplay.innerText = '1';
     maxDisplay.innerText = '100';
@@ -100,8 +79,6 @@ function updateRange() {
     maxDisplay.innerHTML = userMax.value;
     useRange(userMin.value, userMax.value);
   }
-  userMin.value = '';
-  userMax.value = '';
 }
 
 function clearGuess() {
@@ -124,17 +101,6 @@ function disableReset() {
   resetBtn.disabled = false;
 }
 
-function resetGame(e) {
-  e.preventDefault();
-  minDisplay.innerText = "1";
-  maxDisplay.innerText = "100";
-  guessOne.innerText = "?";
-  guessTwo.innerText = "?";
-  challengerOne.innerText = 'Challenger 1 Name';
-  challengerTwo.innerText = 'Challenger 2 Name';
-  genNum();
-}
-
 function clearFields() {
   clearGuess()
   guessOne.innerText = '?';
@@ -154,8 +120,7 @@ function displayName() {
 }
 
 function genNum() {
-  genNumber = Math.floor(Math.random() * (100 - 1)) + 1;
-  return genNumber;
+  return Math.floor(Math.random() * (100 - 1)) + 1;
 }
 
 console.log(genNum())
@@ -187,28 +152,19 @@ function displayFeedback(num, element) {
     element.innerText = 'BOOM!'
     appendArticle(); 
     adjustRange();
-      
   }
 }
 
-function displayWinnerName(suggestion, challenger) {
-  if (suggestion.innerText === 'BOOM!') {
-    console.log(winName);
-    winName = challenger.innerText
-    return winName
-  }
-}
+
 
 function appendArticle() {
-  displayWinnerName(leftSuggestion, challengerOne);
-  displayWinnerName(rightSuggestion, challengerTwo);
   rightSide.insertAdjacentHTML('afterbegin', `<article class='winner'>
       <header class='winner__header'>
-          <h4>${challengerOne.innerText}</h4>
+          <h4>CHALLENGER 1</h4>
           <p>VS</p>
-          <h4>${challengerTwo.innerText}</h4>
+          <h4>CHALLENGER 2 NAME</h4>
       </header>
-      <h2 class='winner__name'>${winName}</h2>
+      <h2 class='winner__name'>CHALLENGER 1 NAME</h2>
       <h3 class='winner__status'>WINNER</h3>
       <footer>
         <p class='winner__p'><span class='winner__span'>2</span> GUESSES</p>
@@ -216,8 +172,6 @@ function appendArticle() {
         <button>X</button>
       </footer>
       </header>`)
- 
-
 }
 
 
