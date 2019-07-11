@@ -456,86 +456,303 @@ footer {
   }
 
 @media screen and (max-width: 600px) {
-}
-  h2 {
-    color: white;
-    font-size: 1.2em;
-    font-weight: 300;
-  }
 
-  main {
-    display: block;
-  }
+    main {
+      display: block;
+    }
+    
+    h1 {
+      color: #DD1972;
+      font-size: 3em;
+      margin: auto;
+      padding: 1% 0 .3% 0;
+    }
+    
+    h2 {
+      color: white;
+      font-size: 1.2em;
+      font-weight: 300;
+    }
 
-  h1 {
-    color: #DD1972;
-    font-size: 3em;
-    margin: auto;
-    padding: 1% 0 .3% 0;
-  }
+    .left-pane {
+      width: 100%;
+    }
 
-  .left-pane {
-    width: 100%;
-  }
+    .right-pane {
+      width: 100%
+    }
 
-  .right-pane {
-    width: 100%
-  }
+    .range__header {
+      color: #404041;
+      font-size: 1.2em;
+      margin: 1% 2%;
+    }
 
-  .range__header {
-    color: #404041;
-    font-size: 1.2em;
-    margin: 1% 2%;
-  }
+    .range__input {
+      color: #6E6E6E;
+      height: 4vh;
+      width: 30vw;
+    } 
 
-  .range__input {
-    color: #6E6E6E;
-    height: 4vh;
-    width: 30vw;
-  } 
+    .range__button {
+      background-color: #6E6E6E;
+      border-radius: 5em;
+      color: #FFFFFF;
+      font-size: 2.2vh;
+      font-weight: 600;
+      height: 4.7vh;
+      margin: 2% 5% 2% 10%;
+      width: 29vw;
+    } 
 
-  .range__button {
-    background-color: #6E6E6E;
-    border-radius: 5em;
-    color: #FFFFFF;
-    font-size: 2.2vh;
-    font-weight: 600;
-    height: 4.7vh;
-    margin: 2% 5% 2% 10%;
-    width: 29vw;
-  } 
+    .player__header {
+      color: #6E6E6E;
+      padding: 0 0 0 2%;
+      margin-bottom: 0;
+      font-size: .8em;
+    }
 
-  .player__header {
-    color: #6E6E6E;
-    padding: 0 0 0 2%;
-    margin-bottom: 0;
-    font-size: .8em;
-  }
+    .player__name {
+      color: #404041;
+      font-size: 1.1em;
+      margin: 1.4% 0;
+    }
 
-  .player__name {
-    color: #404041;
-    font-size: 1.1em;
-    margin: 1.4% 0;
-  }
+    .player__input {
+      color: #6E6E6E;
+      height: 4vh;
+      width: 45vw;
+    }
 
-  .player__input {
-    color: #6E6E6E;
-    height: 6vh;
-    width: 45vw;
-  }
+    .guess-input {
+      height: 4vh;
+      width: 40vw;
+    }
 
-.button-div {
-    align-content: space-around;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+    .button-div {
+      align-content: space-around;
+      display: flex;
+      justify-content: center;
+    }
 
-.scoreboard__player {
-    color: #6E6E6E;
-    font-size: 1.em;
-    margin: 0;
-  }
-   
+    button {
+      background-color: #6E6E6E;
+      border-radius: 5em;
+      color: #FFFFFF;
+      font-size: 1.9vh;
+      font-weight: 600;
+      height: 3.5vh;
+      height: 5vh;
+      margin: 1.8% 0 3% 2%;
+      outline: none;
+      width: 41vh;
+    }
 
+    .scoreboard__player {
+      color: #6E6E6E;
+      font-size: 1.em;
+      margin: 0;
+    }
+      
+@media screen and (max-width: 320px) {
+  
+    main {
+      display: block;
+    }
+    
+    h1 {
+      color: #DD1972;
+      font-size: 2em;
+      margin: auto;
+      padding: 7% 0 .3% 0;
+    }
+    
+    h2 {
+      color: white;
+      font-size: .5em;
+      font-weight: 300;
+    }
 
+    .left-pane {
+      width: 100%;
+    }
+
+    .right-pane {
+      width: 100%;
+      padding: 2% 0;
+    }
+
+    .range__header {
+      color: #404041;
+      font-size: .8em;
+      margin: 1% 2%;
+    }
+
+    .range__form {
+      display: block;
+    }
+
+    #rangeputs {
+      padding: 0 2%;
+    }
+
+    .range__input {
+      background-color: #F74D9B;
+      color: #6E6E6E;
+      width: 100%;
+    } 
+
+    .label-input {
+      display: block;
+      padding: 0 2%;
+    }
+
+    .range__button {
+      background-color: #6E6E6E;
+      border-radius: 5em;
+      color: #FFFFFF;
+      font-size: 2.2vh;
+      font-weight: 600;
+      height: 4.7vh;
+      margin: 2% 5% 2% 2%;
+      width: 29vw;
+    } 
+
+    .player__form {
+      padding: 0;
+    }
+
+    .player__header {
+      color: #6E6E6E;
+      padding: 0 0 0 2%;
+      margin-bottom: 0;
+      font-size: .8em;
+    }
+
+    .player__name {
+      color: #404041;
+      font-size: 1em;
+      margin: 1.5% 0;
+      padding: 0 2%;
+    }
+
+    .player__label {
+      font-size: 1em;
+    }
+
+    .player__input {
+      color: #6E6E6E;
+      background-color: #DD1972;
+      height: 4vh;
+      width: 100%;
+    }
+
+    .guess-div {
+      margin: auto;
+    }
+
+    .guess-input {
+      height: 4vh;
+      width: 100%;
+    }
+
+    .button-div {
+      align-content: space-around;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    button {
+      background-color: #6E6E6E;
+      border-radius: 5em;
+      color: #FFFFFF;
+      font-size: 1.9vh;
+      font-weight: 600;
+      height: 3.5vh;
+      height: 5vh;
+      margin: 1.8% 0 3% 2%;
+      outline: none;
+      width: 95%;
+    }
+
+    .score-box {
+      display: block;
+      align-items: center;
+      width: 100%;
+    }
+
+    .scoreboard__header {
+      font-size: 1em;
+      margin: 1% 2%;
+    }
+
+    .scoreboard__right {
+      margin: 0;
+      width: 100%;
+    }
+    
+    .scoreboard__left {
+      margin: 0;
+      width: 100%;
+    }
+
+    #border {
+      border-bottom: 2px solid #D1D2D4;
+      height: 0;
+      margin: 8%;
+      position: relative;
+    }
+
+    .scoreboard__player {
+      color: #6E6E6E;
+      font-size: 1.3em;
+      margin: 0;
+    }
+
+    .winner {
+      background-color: white;
+      border: solid 1px #6E6E6E;
+      margin: 1.5% 4.5%;
+      padding: 0 2%;
+    }
+
+    .winner__header {
+      border-bottom: 1px solid #D0D2D3;
+      color: #404041;
+      display: block;
+      justify-content: space-around;
+      margin-bottom: 1%;
+      text-align: center;
+    }
+
+    h4,
+    .vs {
+      font-size: .8em;
+      margin: 2% 0
+    }
+
+    .winner__name {
+      color: #6E6E6E;
+      font-size: 1.6em;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+    }
+
+    .winner__status {
+      color: #6E6E6E;
+      font-size: 1.5em;
+      font-weight: 200;
+      margin: 0 0 4% 0;
+      text-align: center;
+    }
+
+    .winner__p {
+      font-size: .8em;
+    }
+
+    #delete-button {
+      height: 3.5vh;
+      text-align: center;
+    }
