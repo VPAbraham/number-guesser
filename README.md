@@ -17,14 +17,9 @@ win badges
 
 
 ## Screenshots
-<!-- screenshots go here -->
-[
-[
--
-<!-- screenshots go here -->
-]
-]
+![](https://github.com/VPAbraham/number-guesser/blob/master/images/127.0.0.1_5500_index.html%20(1).png)
 
+![](https://github.com/VPAbraham/number-guesser/blob/master/images/large-query.png)
 
 
 ## Code Example
