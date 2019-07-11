@@ -17,7 +17,7 @@ win badges
 
 
 ## Screenshots
-![](https://github.com/VPAbraham/number-guesser/blob/master/images/127.0.0.1_5500_index.html%20(1).png)
+![screencapture-127-0-0-1-5500-index-html-2019-07-11-09_05_33](https://user-images.githubusercontent.com/45470456/61062298-2ebf1f80-a3bb-11e9-9193-25b9b4fe07dc.png)
 
 ![](https://github.com/VPAbraham/number-guesser/blob/master/images/large-query.png)
 
