@@ -369,7 +369,7 @@ footer {
 
 #delete-button {
   border-radius: 50em;
-  height: .3vh;
+  height: 2%;
   margin: 0;
   text-align: center;
 }
@@ -596,7 +596,6 @@ footer {
     }
 
     .range__input {
-      background-color: #F74D9B;
       color: #6E6E6E;
       width: 100%;
     } 
@@ -641,7 +640,6 @@ footer {
 
     .player__input {
       color: #6E6E6E;
-      background-color: #DD1972;
       height: 4vh;
       width: 100%;
     }
