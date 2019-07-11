@@ -16,7 +16,7 @@ body {
 .header {
 align-items: center;
 background-color: #404041;
-height: 23vh;
+height: 20%;
 padding: none;
 text-align: center;
 width: 100%;
@@ -37,7 +37,7 @@ h1 {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 0 20% 0 20%;
+  margin: -3.1% 20% 0px 20%;
   text-align: center;
 }
 
@@ -71,7 +71,6 @@ width: 50%
 
 .label-input {
   display: inline-block;
-  padding: 1pc 1pc 1pc 0;
   width: auto;
 }
 
@@ -125,8 +124,7 @@ width: 50%
   color: #FFFFFF;
   font-size: 2vh;
   font-weight: 600;
-  height: 4vh;
-  margin-top: 3.8vh;
+  height: 3.7vh;
   width: 11vw;
 }
 
@@ -210,7 +208,6 @@ img {
 
 .guess-input {
   height: 5vh;
-  margin-left: 5%;
   width: 16vw;
 }
 
@@ -386,3 +383,69 @@ footer {
   font-weight: 700;
 }
 
+/*@media screen and (min-width: 1391px) {
+
+.range__header {
+  font-size: 1.6em;
+  margin: 1pc .5pc;
+}
+
+.range__label {
+  font-size: 1.3em; 
+}
+
+.range__input {
+  height: 3.5vh;
+  width: 17vw;
+}
+
+img {
+  height: 1.3vh;
+  width: 1.3vw;
+}
+
+.player__name{
+  font-size: 1.6em;
+}
+
+.player__label {
+  font-size: 1.3em;
+}
+
+.guess-input {
+  width: 14.6vw;
+}
+
+#player-one-name,
+#player-two-name{
+  width: 29vw;
+}
+
+button {
+  border-radius: 5em;
+  font-size: 1.1em;
+  height: 3.5vh;
+  height: 5vh;
+  width: 22vh;
+}
+
+.scoreboard__header {
+  font-size: 1.6em;
+}
+
+.scoreboard__player{
+  font-size: 1.2em;
+}
+
+.scoreboard__label {
+  font-size: 1.18em;
+}
+
+.scoreboard__guess {
+  font-size: 6em;
+}
+
+.scoreboard__prompt {
+  font-size: 1.2em;
+}  
+}*/
