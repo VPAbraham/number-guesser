@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Number Guesser</title>
+    <title>Number Guesser Game</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
   <body>
     <header class="header">
       <h1>NUMBER<span class="guesser">GUESSER</span></h1>
@@ -55,10 +54,10 @@
             <div class="label-input"> 
               <label class="player__label">Guess</label>
               <input type="number" class="player__input  guess-input" id="player-one-guess" name="guess" >
-               <div class="guess-error" id="guess-error-msg-1">
-                <img src="images/error-icon.svg">
-                <p class="error-info">Guess not within range</p>
-              </div>
+                <div class="guess-error" id="guess-error-msg-1">
+                  <img src="images/error-icon.svg">
+                  <p class="error-info">Guess not within range</p>
+                </div>
             </div>
             <h3 class="player__name player-two">Challenger 2</h3>
             <div class="label-input">
@@ -81,7 +80,7 @@
             <div class="button-div">
               <button class="player__button" id="submit-btn" >SUBMIT GUESS</S></button>
               <button class="player__button" id="reset-btn" disabled>RESET BUTTON</button>
-              <button class="player__button" id="clear-btn" type="button" disabled>CLEAR BUTTON</button>
+              <button class="player__button" id="clear-btn" disabled>CLEAR BUTTON</button>
             </div>
           </form>
         </article>
@@ -91,20 +90,20 @@
               <div class="scoreboard__left">
                 <h4 class="scoreboard__player" id="player-one">Challenger 1 Name</h4>
                 <p class="scoreboard__label">current guess</p>
-                <p class="scoreboard__guess" id="player1-guess">97</p>
+                <p class="scoreboard__guess" id="player1-guess">?</p>
                 <p class="scoreboard__prompt" id="left-tip" >that's too high</p>
               </div>
               <div class="scoreboard__right">
                 <h4 class="scoreboard__player" id="player-two">Challenger 2 Name</h4>
                 <p class="scoreboard__label">current guess</p>
-                <p class="scoreboard__guess" id="player2-guess">3</p>
+                <p class="scoreboard__guess" id="player2-guess">?</p>
                 <p class="scoreboard__prompt" id="right-tip" >that's too low</p>
               </div>
             </section>
         </article>
       </section>  
       <section class="right-pane">
-        <article class="winner">
+       <!--  <article class="winner">
           <header class="winner__header">
             <h4>CHALLENGER 1 NAME</h4>
             <p>VS</p>
@@ -118,7 +117,7 @@
             <button id="delete-button">X</button>
           </footer>
           </header> 
-        </article>
+        </article> -->
       </section>
     </main>
   </body>

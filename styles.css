@@ -14,12 +14,12 @@ body {
 /* Header Section */
 
 .header {
-align-items: center;
-background-color: #404041;
-height: 20%;
-padding: none;
-text-align: center;
-width: 100%;
+  align-items: center;
+  background-color: #404041;
+  height: 20%;
+  padding: none;
+  text-align: center;
+  width: 100%;
 }
 
 .guesser{
@@ -66,7 +66,7 @@ height: 200;
 /*Left Pane*/
 
 .left-pane {
-background-color: #F7F7F7;
+background-color: #f7f7f7;
 width: 50%;
 }
 
@@ -84,7 +84,6 @@ width: 50%;
 }
 
 /*Range Card <---- Left Pane*/
-
 
 .range {
   background-color: white;
@@ -205,6 +204,7 @@ img {
 .player__input {
   color: #6E6E6E;
   height: 4vh;
+  width: 25vw;
 }
 
 .guess-div {
@@ -218,7 +218,6 @@ img {
 #player-one-name,
 #player-two-name{
   margin-right: 8%;
-  width: 25vw;
 }
 
 .button-div {
@@ -317,7 +316,6 @@ button:hover:enabled {
   font-weight: 200;
 }
 
-
 /*Right Pane*/
 
 .right-pane {
@@ -325,7 +323,6 @@ button:hover:enabled {
   height: auto;
   width: 50%;
 }
-
 
 /*Winner Card ----> Right Pane*/
 
@@ -391,4 +388,153 @@ footer {
 
 @media screen and (max-width: 1125px) {
 
+  h2 {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  main {
+    display: block;
+  }
+
+  h1 {
+    color: #DD1972;
+    font-size: 3em;
+    margin: auto;
+    padding: 1% 0 .3% 0;
+  }
+
+  .left-pane {
+    width: 100%;
+  }
+
+  .right-pane {
+    width: 100%
+  }
+
+  .range__header {
+    color: #404041;
+    font-size: 1.2em;
+    margin: 1% 2%;
+  }
+
+  .range__input {
+    color: #6E6E6E;
+    height: 6vh;
+    width: 30vw;
+  }
+
+  .range__button {
+    background-color: #6E6E6E;
+    border-radius: 5em;
+    color: #FFFFFF;
+    font-size: 2.6vh;
+    font-weight: 600;
+    height: 4.7vh;
+    margin: 2% 5% 2% 10%;
+    width: 29vw;
+  } 
+
+  .player__header {
+    color: #6E6E6E;
+    padding: 0 0 0 2%;
+    margin-bottom: 0;
+    font-size: .8em;
+  }
+
+  .player__name {
+    color: #404041;
+    font-size: 1.1em;
+    margin: 1.4% 0;
+  }
+
+  .player__input {
+    color: #6E6E6E;
+    height: 6vh;
+    width: 45vw;
+  }
+
+@media screen and (max-width: 600px) {
 }
+  h2 {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  main {
+    display: block;
+  }
+
+  h1 {
+    color: #DD1972;
+    font-size: 3em;
+    margin: auto;
+    padding: 1% 0 .3% 0;
+  }
+
+  .left-pane {
+    width: 100%;
+  }
+
+  .right-pane {
+    width: 100%
+  }
+
+  .range__header {
+    color: #404041;
+    font-size: 1.2em;
+    margin: 1% 2%;
+  }
+
+  .range__input {
+    color: #6E6E6E;
+    height: 4vh;
+    width: 30vw;
+  } 
+
+  .range__button {
+    background-color: #6E6E6E;
+    border-radius: 5em;
+    color: #FFFFFF;
+    font-size: 2.2vh;
+    font-weight: 600;
+    height: 4.7vh;
+    margin: 2% 5% 2% 10%;
+    width: 29vw;
+  } 
+
+  .player__header {
+    color: #6E6E6E;
+    padding: 0 0 0 2%;
+    margin-bottom: 0;
+    font-size: .8em;
+  }
+
+  .player__name {
+    color: #404041;
+    font-size: 1.1em;
+    margin: 1.4% 0;
+  }
+
+  .player__input {
+    color: #6E6E6E;
+    height: 6vh;
+    width: 45vw;
+  }
+
+.button-div {
+    align-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.scoreboard__player {
+    color: #6E6E6E;
+    font-size: 1.em;
+    margin: 0;
+  }
+  
+}  
