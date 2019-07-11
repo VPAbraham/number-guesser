@@ -187,20 +187,21 @@ function displayFeedback(num, element) {
     element.innerText = 'BOOM!'
     appendArticle(); 
     adjustRange();
-      displayWinnerName(leftSuggestion, challengerOne);
-      displayWinnerName(rightSuggestion, challengerTwo);
+      
   }
 }
 
 function displayWinnerName(suggestion, challenger) {
   if (suggestion.innerText === 'BOOM!') {
-    winName.innerText = challenger.innerText
+    console.log(winName);
+    winName = challenger.innerText
     return winName
   }
 }
 
 function appendArticle() {
-  console.log('hi')
+  displayWinnerName(leftSuggestion, challengerOne);
+  displayWinnerName(rightSuggestion, challengerTwo);
   rightSide.insertAdjacentHTML('afterbegin', `<article class='winner'>
       <header class='winner__header'>
           <h4>${challengerOne.innerText}</h4>
@@ -215,6 +216,8 @@ function appendArticle() {
         <button>X</button>
       </footer>
       </header>`)
+ 
+
 }
 
 
