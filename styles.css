@@ -14,12 +14,12 @@ body {
 /* Header Section */
 
 .header {
-align-items: center;
-background-color: #404041;
-height: 20%;
-padding: none;
-text-align: center;
-width: 100%;
+  align-items: center;
+  background-color: #404041;
+  height: 20%;
+  padding: none;
+  text-align: center;
+  width: 100%;
 }
 
 .guesser{
@@ -66,7 +66,7 @@ height: 200;
 /*Left Pane*/
 
 .left-pane {
-background-color: #F7F7F7;
+background-color: #f7f7f7;
 width: 50%;
 }
 
@@ -84,7 +84,6 @@ width: 50%;
 }
 
 /*Range Card <---- Left Pane*/
-
 
 .range {
   background-color: white;
@@ -317,7 +316,6 @@ button:hover:enabled {
   font-weight: 200;
 }
 
-
 /*Right Pane*/
 
 .right-pane {
@@ -325,7 +323,6 @@ button:hover:enabled {
   height: auto;
   width: 50%;
 }
-
 
 /*Winner Card ----> Right Pane*/
 
@@ -390,5 +387,7 @@ footer {
 }
 
 @media screen and (max-width: 1125px) {
-
-}
+  main {
+    display: block;
+  }
+} 

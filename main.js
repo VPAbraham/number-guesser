@@ -25,10 +25,8 @@ var winName = document.querySelector('.winner__name')
 var leftSide = document.querySelector('.left-pane');
 var rightSide = document.querySelector('.right-pane')
 
-
 // Event Listeners
 
-// leftSide.addEventListener('click', runAll)
 updateBtn.addEventListener('click', updateRange);
 clearBtn.addEventListener('click', clearFields);
 submitBtn.addEventListener('click', submitFunc);
@@ -37,6 +35,38 @@ leftSide.addEventListener('keyup', disableBtns);
 conflictError.addEventListener('click', guessesError);
 
 // Functions
+function disableBtns() {
+  disableClear();
+  disableReset();
+}
+
+function disableClear() {
+  if (playerOneGuess.value === "" && playerTwoGuess.value === "") {
+    clearBtn.disabled = false;
+  } else {
+    clearBtn.disabled = true;
+  }
+}
+
+function disableReset() {
+  if (playerOneName.value && playerTwoName.value === "") {
+    resetBtn.disabled = true;
+  } else resetBtn.disabled = false;
+}
+
+function submitFunc(e) {
+  e.preventDefault();
+  guessesError();
+  nameErrorCh1(playerOneGuess, guessMsg1);
+  nameErrorCh1(playerTwoGuess, guessMsg2);
+  nameErrorCh1(playerOneName, nameMsg1);
+  nameErrorCh1(playerTwoName, nameMsg2);
+  displayName();
+  displayGuess();
+  displayFeedback(playerOneGuess.value, leftSuggestion);
+  displayFeedback(playerTwoGuess.value, rightSuggestion);
+}
+
 function rangeError() {
   if (userMin.value > userMax.value) {
     conflictError.style.visibility = 'visible';
@@ -55,15 +85,19 @@ function guessesError() {
   if (parseInt(playerOneGuess.value) > parseInt(maxDisplay.innerText)) {
     guessMsg1.style.visibility = 'visible';
     playerOneGuess.style.border = 'solid 2px #DD1972';
+    return
   } else if (parseInt(playerTwoGuess.value) > parseInt(maxDisplay.innerText)) {
     guessMsg2.style.visibility = 'visible';
     playerTwoGuess.style.border = 'solid 2px #DD1972';
+    return
   } else if (parseInt(playerOneGuess.value) < parseInt(minDisplay.innerText)) {
     guessMsg1.style.visibility = 'visible';
     playerOneGuess.style.border = 'solid 2px #DD1972';
+    return
   } else if (parseInt(playerTwoGuess.value) < parseInt(minDisplay.innerText)) {
     guessMsg2.style.visibility = 'visible';
     playerTwoGuess.style.border = 'solid 2px #DD1972';
+    return
   }
 }
 
@@ -74,21 +108,6 @@ function nameErrorCh1(input, message) {
   }
 }
 
-function disableBtns() {
-  disableClear();
-  disableReset();
-}
-
-function submitFunc(e) {
-  e.preventDefault();
-  guessesError();
-  nameErrorCh1(playerOneGuess, nameMsg1);
-  nameErrorCh1(playerTwoGuess, nameMsg2);
-  displayName();
-  displayGuess();
-  displayFeedback(playerOneGuess.value, leftSuggestion);
-  displayFeedback(playerTwoGuess.value, rightSuggestion);
-}
 
 function updateRange() {
   rangeError();
@@ -109,19 +128,11 @@ function clearGuess() {
   playerTwoGuess.value = '';
 }
 
-function disableClear() {
-  if (playerOneGuess.value === '' && playerTwoGuess.value === '') {
-    clearBtn.disabled = false;
-  } else {
-    clearBtn.disabled = true;
-  }
-}
-
-function disableReset() {
-  if (playerOneName.value && playerTwoName.value === '') {
-    resetBtn.disabled = true;
-  } else 
-  resetBtn.disabled = false;
+function clearFields() {
+  clearGuess();
+  guessOne.innerText = "?";
+  guessTwo.innerText = "?";
+  disableClear();
 }
 
 function resetGame(e) {
@@ -133,24 +144,6 @@ function resetGame(e) {
   challengerOne.innerText = 'Challenger 1 Name';
   challengerTwo.innerText = 'Challenger 2 Name';
   genNum();
-}
-
-function clearFields() {
-  clearGuess()
-  guessOne.innerText = '?';
-  guessTwo.innerText = '?';
-  disableClear();
-}
-
-
-function displayGuess() {
-  guessOne.innerText = playerOneGuess.value;
-  guessTwo.innerText = playerTwoGuess.value;
-}
-
-function displayName() {
-  challengerOne.innerText = playerOneName.value;
-  challengerTwo.innerText = playerTwoName.value;
 }
 
 function genNum() {
@@ -178,6 +171,16 @@ function adjustRange() {
   return winNum;
 }
 
+function displayGuess() {
+  guessOne.innerText = playerOneGuess.value;
+  guessTwo.innerText = playerTwoGuess.value;
+}
+
+function displayName() {
+  challengerOne.innerText = playerOneName.value;
+  challengerTwo.innerText = playerTwoName.value;
+}
+
 function displayFeedback(num, element) {
   if (num > genNumber) {
     element.innerText = 'That\'s too high';
@@ -187,7 +190,6 @@ function displayFeedback(num, element) {
     element.innerText = 'BOOM!'
     appendArticle(); 
     adjustRange();
-      
   }
 }
 
@@ -219,5 +221,3 @@ function appendArticle() {
  
 
 }
-
-
